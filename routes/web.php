@@ -1,0 +1,53 @@
+<?php
+
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AppointmentsController;
+use App\Http\Controllers\CarsController;
+use App\Http\Controllers\FinancingController;
+use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\SellYourCarController;
+use App\Http\Controllers\TestimonialsController;
+use App\Http\Controllers\WhyUsController;
+use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
+
+Route::get('/', function () {
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('home');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
+});
+
+Route::get('/cars', [CarsController::class, 'index'])->name('cars.index');
+
+Route::get('/appointments/success', [AppointmentsController::class, 'success'])->name('appointments.success');
+Route::post('/appointments', [AppointmentsController::class, 'store'])->name('appointments.store');
+Route::get('/appointments/create', [AppointmentsController::class, 'create'])->name('appointments.create');
+
+Route::post('/newsletter', [NewsletterController::class, 'store'])->name('newsletter.store');
+
+Route::get('sell-your-car', [SellYourCarController::class, 'index'])->name('sell-your-car.index');
+//Route::post('sell-your-car', [SellYourCarController::class, 'store'])->name('sell-your-car.store');
+
+
+// todo
+Route::get('why-us', [WhyUsController::class, 'index'])->name('why-us.index');
+
+Route::get('about', [AboutController::class, 'index'])->name('about.index');
+
+Route::get('/testimonials', [TestimonialsController::class, 'index'])->name('testimonials.index');
+
+Route::get('/financing', [FinancingController::class, 'index'])->name('financing.index');
