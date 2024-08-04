@@ -1,6 +1,7 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 import Navbar from "@/Components/Navbar.vue";
+import BottomLayout from "@/Layouts/BottomLayout.vue";
 defineProps({
     canLogin: {
         type: Boolean,
@@ -140,23 +141,9 @@ function handleImageError() {
                 </main>
 
             </div>
+            <bottom-layout></bottom-layout>
         </div>
 
-        <div class="relative w-full bg-white py-10 mt-20">
-            <div class="flex flex-col items-center justify-center text-black">
-                <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <h2 class="text-5xl mt-10 text-center lg:text-left">Events</h2>
-                    <p class="mt-10 text-center lg:text-left"><i>No upcoming events are available as of now.</i></p>
 
-                    <hr class="mt-10">
-                    <h2 class="text-5xl mt-10 text-center lg:text-left">Contact Us</h2>
-                    <p class="mt-10 text-center lg:text-left">
-                        Unit 5a Keer Park, Carnforth, Lancashire<br/>
-                        +44 1524 488800<br/>
-                        info@luxuria-auto.co.uk
-                    </p>
-                </div>
-            </div>
-        </div>
     </div>
 </template>

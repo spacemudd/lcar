@@ -134,8 +134,12 @@ export default {
                 <h3 class="font-bold">Navigation</h3>
                 <ul class="list-disc">
                     <li class="ml-3 mt-1"><a href="route('home')">Home</a></li>
-                    <li class="ml-3 mt-1"><a href="route('home')">Cars</a></li>
-                    <li class="ml-3 mt-1"><a href="route('home')">Book an appointment</a></li>
+                    <li class="ml-3 mt-1"><a href="route('cars.index')">Cars</a></li>
+                    <li class="ml-3 mt-1"><a href="route('sell-your-car.index')">Sell Your Car</a></li>
+                    <li class="ml-3 mt-1"><a href="route('about.index')">About</a></li>
+                    <li class="ml-3 mt-1"><a href="route('testimonials.index')">Testimonials</a></li>
+                    <li class="ml-3 mt-1"><a href="route('financing.index')">Financing</a></li>
+                    <li class="ml-3 mt-1"><a href="route('appointments.index')">Appointment</a></li>
                 </ul>
             </div>
             <div>
