@@ -60,7 +60,8 @@ function handleImageError() {
                         <div class="relative z-10 px-6 py-12 text-white">
                             <h1 class="text-7xl font-bold opacity-100">Your gateway to luxury.</h1>
                             <p class="ml-2 mt-10">
-                                Offering an exclusive selection of the finest brands, including Bentley, Ferrari, and Rolls-Royce, each representing the pinnacle of elegance and performance.
+                                Offering an exclusive selection of the finest brands, including Porsche, Mercedes, Lamborghini, Bentley, Ferrari, and
+                                Rolls-Royce, each representing the pinnacle of elegance and performance.
                             </p>
                             <div class="flex flex-col lg:flex-row gap-2 mt-10">
                                 <div>
@@ -76,7 +77,7 @@ function handleImageError() {
                             </div>
 
                             <!--<p class="mt-10">* Open from Monday to Fri 9AM to 6PM</p>-->
-                            <p class="mt-10">* Our line is open for our elite members: +44 1524 488800</p>
+                            <p class="mt-10">* For more information on what we offer our clients contact us on: +44 1524 488800</p>
                             <p>* For immediate requests, please reach us at info@luxuria-auto.co.uk</p>
                         </div>
                         <div class="absolute inset-0 bg-black bg-opacity-50" />
@@ -96,20 +97,20 @@ function handleImageError() {
 
                         <div class="grid sm:grid-cols-1 lg:grid-cols-4 gap-6 mt-5 text-center">
                             <div class="text-black bg-gray-200 p-5 rounded">
-                                <h2 class="font-bold text-2xl">Transportation</h2>
-                                <p>Premier service for transporting luxury cars with precision and care.</p>
-                            </div>
-                            <div class="text-black bg-gray-200 p-5 rounded">
-                                <h2 class="font-bold text-2xl">Collection & Return</h2>
-                                <p>Exclusive service for luxury car collection and return with precision.</p>
+                                <h2 class="font-bold text-2xl">Vehicle Sales</h2>
+                                <p>Offering an elite collection of luxury, sports and supercars, both modern and classic.</p>
                             </div>
                             <div class="text-black bg-gray-200 p-5 rounded">
                                 <h2 class="font-bold text-2xl">Sourcing</h2>
                                 <p>Expert service for sourcing rare and exclusive luxury cars globally.</p>
                             </div>
                             <div class="text-black bg-gray-200 p-5 rounded">
-                                <h2 class="font-bold text-2xl">Sale or Return</h2>
+                                <h2 class="font-bold text-2xl">Consignment services</h2>
                                 <p>Professional service for sale or return of high-end luxury cars.</p>
+                            </div>
+                            <div class="text-black bg-gray-200 p-5 rounded">
+                                <h2 class="font-bold text-2xl">Collection & Return</h2>
+                                <p>Exclusive service for luxury car collection and return with precision.</p>
                             </div>
                         </div>
                     </div>
@@ -141,7 +142,7 @@ function handleImageError() {
                         <event-record day="17"
                                   month="Aug"
                                   title="Showroom Grand Opening 2024"
-                                  description="Join us for the grand opening of our new showroom. We will be showcasing the latest and rarest supercars in the world."
+                                  description="Join us for the grand opening of our new showroom. We will be showcasing the latest, rare, and elite selection of vehicles."
                                   link="https://www.instagram.com/p/C9j4a77MC8Y/"
                         >
                         </event-record>
