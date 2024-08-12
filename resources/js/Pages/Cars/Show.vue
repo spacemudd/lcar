@@ -118,6 +118,14 @@ function handleImageError() {
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="mt-10">
+                                    <a class="text-white border border-white p-2 hover:bg-white hover:text-black"
+                                       :href="route('appointments.create')">
+                                        Book an appointment
+                                    </a>
+                                </div>
+
                             </div>
                         </div>
 
