@@ -96,7 +96,7 @@ function handleImageError() {
                                       :description2="car.description2"
                                       :price="car.price"
                                       :year="car.year"
-                                      :engine="car.engine"
+                                      :engine="car.engine_size"
                             >
                             </car-card>
                         </template>
