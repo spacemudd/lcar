@@ -94,7 +94,7 @@ function handleImageError() {
                                 <a target="_blank" :href="route('media.show', car.media[0].id)">
                                     <img :src="route('media.show', car.media[0].id)" class="pb-5">
                                 </a>
-                                <div class="grid grid-col-3 lg:grid-cols-6 gap-2">
+                                <div class="grid grid-cols-3 lg:grid-cols-6 gap-2">
                                     <div v-for="img in car.media">
                                         <a target="_blank" :href="route('media.show', img.id)">
                                             <img class="w-20 border border-yellow-500"
