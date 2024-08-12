@@ -21,6 +21,10 @@ defineProps({
     cars: {
         type: Array,
         required: true,
+    },
+    car: {
+        type: Object,
+        required: true,
     }
 });
 
@@ -33,7 +37,7 @@ function handleImageError() {
 </script>
 
 <template>
-    <Head title="Welcome" />
+    <Head title="Cars " />
     <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
         <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="/bg-2.svg" />
         <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
@@ -78,34 +82,59 @@ function handleImageError() {
 
 
                 <main>
-                    <div class="relative bg-black rounded-lg overflow-hidden mt-10 p-2">
+                    <div class="relative bg-black rounded-lg overflow-hidden mt-10 p-5">
                         <h2 class="text-5xl text-white font-bold text-center lg:text-left">
-                            Curated Selection
+                            {{ car.description }}
                         </h2>
                         <p class="mt-5 text-2xl">
-                            Discover our curated selection of luxury cars, featuring the finest brands, impeccable craftsmanship, and unparalleled performance for discerning drivers.
+                            {{ car.description2 }}
                         </p>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 mt-10 gap-5">
+                            <div>
+                                <a target="_blank" :href="route('media.show', car.media[0].id)">
+                                    <img :src="route('media.show', car.media[0].id)" class="pb-5">
+                                </a>
+                                <div class="flex gap-2">
+                                    <div v-for="img in car.media">
+                                        <a target="_blank" :href="route('media.show', img.id)">
+                                            <img class="w-20 border border-yellow-500"
+                                                 :src="route('media.show', img.id)"
+                                                 alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="hidden lg:block leading-8"
+                                   style="font-family:'Times New Roman';margin-top:-10px;"
+                                   v-html="car.long_description"></p>
+
+                                <div class="grid grid-cols-1 lg:grid-cols-3 mt-5 gap-5">
+                                    <div v-for="(property, index) in {Price: car.price, Mileage: car.mileage, Fuel: car.fuel_type, Registration: car.registration, Owners:car.owners, 'Emission Class': car.emission_class}"
+                                         class="bg-white text-black p-2 border-2 border-yellow-500 text-sm">
+                                        <div class="flex justify-between">
+                                            <p>{{ index }}</p>
+                                            <p>{{ property }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 block lg:hidden">
+                            <p v-html="car.long_description"></p>
+                        </div>
+
                     </div>
 
-                    <div class="mt-2 grid grid-cols-1 lg:grid-cols-3 gap-5">
-                        <template v-for="car in cars"
-                                  v-key="car.id">
-                            <car-card :id="car.id"
-                                      :car="car"
-                                      :description="car.description"
-                                      :description2="car.description2"
-                                      :price="car.price"
-                                      :year="car.year"
-                                      :engine="car.engine"
-                            >
-                            </car-card>
-                        </template>
-                    </div>
+
                 </main>
 
             </div>
-            <bottom-layout></bottom-layout>
         </div>
+
+        <bottom-layout></bottom-layout>
+
 
     </div>
 </template>

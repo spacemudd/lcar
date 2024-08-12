@@ -51,6 +51,9 @@ const logout = () => {
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
+                                <NavLink :href="route('admin.cars.index')" :active="route().current('admin.cars.index')">
+                                    Cars
+                                </NavLink>
                             </div>
                         </div>
 

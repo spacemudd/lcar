@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -9,6 +10,16 @@ class CarsController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Cars/Index');
+        $cars = Car::with('media')->get();
+        return Inertia::render('Cars/Index', [
+            'cars' => $cars,
+        ]);
+    }
+
+    public function show($id)
+    {
+        return Inertia::render('Cars/Show', [
+            'car' => Car::with('media')->findOrFail($id),
+        ]);
     }
 }

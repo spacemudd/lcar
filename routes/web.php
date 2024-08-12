@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AppointmentsController;
 use App\Http\Controllers\CarsController;
 use App\Http\Controllers\FinancingController;
+use App\Http\Controllers\MediaController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\SellYourCarController;
 use App\Http\Controllers\TestimonialsController;
@@ -32,6 +33,7 @@ Route::middleware([
 });
 
 Route::get('/cars', [CarsController::class, 'index'])->name('cars.index');
+Route::get('/cars/{id}', [CarsController::class, 'show'])->name('cars.show');
 
 Route::get('/appointments/success', [AppointmentsController::class, 'success'])->name('appointments.success');
 Route::post('/appointments', [AppointmentsController::class, 'store'])->name('appointments.store');
@@ -51,3 +53,13 @@ Route::get('about', [AboutController::class, 'index'])->name('about.index');
 Route::get('/testimonials', [TestimonialsController::class, 'index'])->name('testimonials.index');
 
 Route::get('/financing', [FinancingController::class, 'index'])->name('financing.index');
+
+
+//
+Route::get('/admin/cars', [\App\Http\Controllers\Admin\CarsController::class, 'index'])->name('admin.cars.index');
+Route::get('/admin/cars/{id}', [\App\Http\Controllers\Admin\CarsController::class, 'show'])->name('admin.cars.show');
+
+Route::post('/admin/cars/{id}/upload', [\App\Http\Controllers\Admin\CarsController::class, 'upload'])->name('admin.cars.upload');
+
+Route::get('media/{id}', [MediaController::class, 'show'])->name('media.show');
+
