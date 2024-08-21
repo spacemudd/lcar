@@ -11,8 +11,8 @@ class AutoTraderService
 
     public function __construct()
     {
-        $key = env('AUTOTRADER_KEY');
-        $secret = env('AUTOTRADER_SECRET');
+        $key = config('autotrader.key');
+        $secret = config('autotrader.secret');
         $this->advertiser_id = config('autotrader.advertiser_id');
 
         $api = new Client(['sandbox' => true]);
