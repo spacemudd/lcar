@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Car;
 use App\Services\AutoTraderService;
 use Illuminate\Console\Command;
 
@@ -27,6 +28,8 @@ class AutoTraderSync extends Command
     public function handle()
     {
         $vehicles = app()->make(AutoTraderService::class)->stock();
+
+        Car::truncate();
 
         foreach ($vehicles['results'] as $vehicle) {
             $car = \App\Models\Car::create([
@@ -59,6 +62,9 @@ class AutoTraderSync extends Command
             }
 
             foreach ($vehicle['media']['video'] as $video) {
+                if ($video['href'] === null) {
+                    continue;
+                }
                 $car->addMediaFromUrl($video['href'])->toMediaCollection('videos');
             }
         }
