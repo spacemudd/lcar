@@ -61,11 +61,8 @@ class AutoTraderSync extends Command
                 $car->addMediaFromUrl($image['href'])->toMediaCollection('images');
             }
 
-            foreach ($vehicle['media']['video'] as $video) {
-                if ($video['href'] === null) {
-                    continue;
-                }
-                $car->addMediaFromUrl($video['href'])->toMediaCollection('videos');
+            if ($vehicle['media']['video']['href']) {
+                $car->addMediaFromUrl($vehicle['media']['video']['href'])->toMediaCollection('videos');
             }
         }
     }
