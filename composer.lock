@@ -2926,12 +2926,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/spacemudd/autotrader-api.git",
-                "reference": "e1fe11ee2bfe92c5dd2b1841abab717f799a216a"
+                "reference": "bd61245f1f35f13d59d41df8f0661e8c94d4f709"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spacemudd/autotrader-api/zipball/e1fe11ee2bfe92c5dd2b1841abab717f799a216a",
-                "reference": "e1fe11ee2bfe92c5dd2b1841abab717f799a216a",
+                "url": "https://api.github.com/repos/spacemudd/autotrader-api/zipball/bd61245f1f35f13d59d41df8f0661e8c94d4f709",
+                "reference": "bd61245f1f35f13d59d41df8f0661e8c94d4f709",
                 "shasum": ""
             },
             "require": {
@@ -2971,7 +2971,7 @@
             "support": {
                 "source": "https://github.com/spacemudd/autotrader-api/tree/psrlog"
             },
-            "time": "2024-08-21T11:53:15+00:00"
+            "time": "2024-08-21T12:28:13+00:00"
         },
         {
             "name": "optimus/onion",

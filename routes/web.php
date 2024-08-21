@@ -9,9 +9,16 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\SellYourCarController;
 use App\Http\Controllers\TestimonialsController;
 use App\Http\Controllers\WhyUsController;
+use App\Services\AutoTraderService;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+
+Route::get('aa', function() {
+    $car = app()->make(AutoTraderService::class)->stock()['results'][0];
+
+    return $car['media']['images'];
+});
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [

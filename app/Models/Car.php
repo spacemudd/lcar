@@ -11,4 +11,33 @@ class Car extends Model implements HasMedia
 {
     use HasFactory;
     use InteractsWithMedia;
+
+    protected $casts = [
+        'at_data' => 'json',
+    ];
+
+    protected $fillable = [
+        'description',
+        'description2',
+        'long_description',
+        'year',
+        'engine_size',
+        'mileage',
+        'price',
+        'fuel_type',
+        'registration',
+        'owners',
+        'emission_class',
+        'at_stock_id',
+        'at_advertiserAdvert',
+        'at_make',
+        'at_model',
+        'at_derivative',
+        'at_description',
+        'at_description2',
+        'at_published',
+        'at_total_price',
+        'at_last_synced',
+        'at_data',
+    ];
 }
