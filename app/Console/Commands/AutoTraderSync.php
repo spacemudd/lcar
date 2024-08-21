@@ -22,6 +22,8 @@ class AutoTraderSync extends Command
      */
     protected $description = 'Command description';
 
+
+
     /**
      * Execute the console command.
      */
@@ -32,6 +34,9 @@ class AutoTraderSync extends Command
         Car::truncate();
 
         foreach ($vehicles['results'] as $vehicle) {
+            $current_images = 0;
+            $limit = 2;
+
             $car = \App\Models\Car::create([
                 'description' => $vehicle['adverts']['retailAdverts']['description'] ?? $vehicle['vehicle']['make'] .' '. $vehicle['vehicle']['model'],
                 'description2' => $vehicle['adverts']['retailAdverts']['description2'] ?? $vehicle['vehicle']['derivative'],
@@ -58,12 +63,18 @@ class AutoTraderSync extends Command
             ]);
 
             foreach ($vehicle['media']['images'] as $image) {
+                //if ($current_images >= $limit) {
+                //    continue;
+                //}
                 $car->addMediaFromUrl($image['href'])->toMediaCollection('images');
+                //++$current_images;
             }
 
             if ($vehicle['media']['video']['href']) {
                 $car->addMediaFromUrl($vehicle['media']['video']['href'])->toMediaCollection('videos');
             }
+
+            $this->info('Added car: ' . $car->id . ' - ' . $car->description);
         }
     }
 }
