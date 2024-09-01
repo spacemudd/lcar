@@ -8,7 +8,9 @@ use App\Http\Controllers\MediaController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\SellYourCarController;
 use App\Http\Controllers\TestimonialsController;
+use App\Http\Controllers\Webhooks\AutoTraderReceiverController;
 use App\Http\Controllers\WhyUsController;
+use App\Models\Car;
 use App\Services\AutoTraderService;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +21,12 @@ Route::get('aa', function() {
 
     return $car['media']['images'];
 });
+
+Route::get('bb', function() {
+    return Car::first()->at_data;
+});
+
+Route::put('webhooks/autotrader', [AutoTraderReceiverController::class, 'index']);
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [

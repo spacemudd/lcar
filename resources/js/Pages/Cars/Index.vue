@@ -94,7 +94,7 @@ function handleImageError() {
                                       :car="car"
                                       :description="car.description"
                                       :description2="car.description2"
-                                      :price="car.price"
+                                      :price="car.price_human"
                                       :year="car.year"
                                       :engine="car.engine_size"
                             >

@@ -82,13 +82,14 @@ function handleImageError() {
                         </div>
                         <div class="absolute inset-0 bg-black bg-opacity-50" />
                         <!-- autplay  a video -->
+                        <!--/5309354-hd_1920_1080_25fps.mp4-->
                         <video
-                            src="/5309354-hd_1920_1080_25fps.mp4"
+                            src="/luxuria_1.mp4"
                             autoplay
                             loop
                             muted
                             playsinline
-                            class="absolute inset-0 object-cover w-full h-full transition duration-300 opacity-50"
+                            class="absolute inset-0 object-cover w-full h-full transition duration-300 opacity-25"
                         />
                     </div>
 

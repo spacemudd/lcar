@@ -83,6 +83,7 @@ function handleImageError() {
 
                 <main>
                     <div class="relative bg-black rounded-lg overflow-hidden mt-10 p-5">
+                        <p class="text-4xl text-white pb-5">{{ car.at_data.adverts.retailAdverts.attentionGrabber }}</p>
                         <h2 class="text-5xl text-white font-bold text-center lg:text-left">
                             {{ car.description }}
                         </h2>
@@ -110,7 +111,7 @@ function handleImageError() {
                                    v-html="car.long_description"></p>
 
                                 <div class="grid grid-cols-1 lg:grid-cols-3 mt-5 gap-5">
-                                    <div v-for="(property, index) in {Price: car.price, Mileage: car.mileage, Fuel: car.fuel_type, Registration: car.registration, Owners:car.owners, 'Emission Class': car.emission_class}"
+                                    <div v-for="(property, index) in {Price: car.price_human, Mileage: car.mileage, Fuel: car.fuel_type, Registration: car.registration, Owners:car.owners, 'Emission Class': car.emission_class}"
                                          class="bg-white text-black p-2 border-2 border-yellow-500 text-sm">
                                         <div class="flex justify-between">
                                             <p>{{ index }}</p>
@@ -124,6 +125,15 @@ function handleImageError() {
                                        :href="route('appointments.create')">
                                         Book an appointment
                                     </a>
+                                </div>
+
+                                <div class="mt-10 text-white">
+                                    <p><b>List of features:</b></p>
+                                    <ul class="list-disc px-5 pt-5">
+                                        <li v-for="feature in car.at_data.features">
+                                            {{ feature.name }}
+                                        </li>
+                                    </ul>
                                 </div>
 
                             </div>

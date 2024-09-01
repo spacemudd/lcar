@@ -40,4 +40,13 @@ class Car extends Model implements HasMedia
         'at_last_synced',
         'at_data',
     ];
+
+    protected $appends = [
+        'price_human',
+    ];
+
+    public function getPriceHumanAttribute()
+    {
+        return '£'.number_format($this->price, 2);
+    }
 }
