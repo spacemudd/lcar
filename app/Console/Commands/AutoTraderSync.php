@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Car;
 use App\Services\AutoTraderService;
 use Illuminate\Console\Command;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class AutoTraderSync extends Command
 {
@@ -31,6 +32,7 @@ class AutoTraderSync extends Command
     {
         $vehicles = app()->make(AutoTraderService::class)->stock();
 
+        Media::truncate();
         Car::truncate();
 
         foreach ($vehicles['results'] as $vehicle) {
@@ -63,15 +65,15 @@ class AutoTraderSync extends Command
             ]);
 
             foreach ($vehicle['media']['images'] as $image) {
-                //if ($current_images >= $limit) {
-                //    continue;
-                //}
-                //$car->addMediaFromUrl($image['href'])->toMediaCollection('images');
-                //++$current_images;
+                if ($current_images >= $limit) {
+                    continue;
+                }
+                $car->addMediaFromUrl($image['href'])->toMediaCollection('images');
+                ++$current_images;
             }
 
             if ($vehicle['media']['video']['href']) {
-                //$car->addMediaFromUrl($vehicle['media']['video']['href'])->toMediaCollection('videos');
+                $car->addMediaFromUrl($vehicle['media']['video']['href'])->toMediaCollection('videos');
             }
 
             $this->info('Added car: ' . $car->id . ' - ' . $car->description);
