@@ -83,7 +83,7 @@ function handleImageError() {
 
                 <main>
                     <div class="relative bg-black rounded-lg overflow-hidden mt-10 p-5">
-                        <p class="text-4xl text-white pb-5">{{ car.at_data.adverts.retailAdverts.attentionGrabber }}</p>
+                        <p class="text-4xl text-white pb-5" v-if="car.at_data.data">{{ car.at_data.data.adverts.retailAdverts.attentionGrabber }}</p>
                         <h2 class="text-5xl text-white font-bold text-center lg:text-left">
                             {{ car.description }}
                         </h2>

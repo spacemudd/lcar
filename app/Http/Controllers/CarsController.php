@@ -19,7 +19,7 @@ class CarsController extends Controller
     public function show($id)
     {
         return Inertia::render('Cars/Show', [
-            'car' => Car::with('media')->findOrFail($id),
+            'car' => Car::where('at_published', 'PUBLISHED')->with('media')->findOrFail($id),
         ]);
     }
 }

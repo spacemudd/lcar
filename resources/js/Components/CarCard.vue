@@ -14,9 +14,18 @@ export default {
 
 <template>
     <div class="border border-yellow-600 p-5 rounded bg-white text-black">
-        <h2 class="text-3xl text-black">{{ description }}</h2>
+        <template v-if="car.at_data">
+            <template v-if="car.at_data.data">
+                {{ car.at_data.data.adverts.retailAdverts.attentionGrabber }}
+            </template>
+        </template>
+        <h2 class="text-3xl text-black" :id="car.id">{{ description }}</h2>
         <p>{{ description2 }}</p>
-        <img class="mt-2 border-2 border-black" v-if="car.media.length" :src="route('media.show', car.media[0].id)" alt="">
+        <img class="mt-2 border-2 border-black"
+             v-if="car.media.length"
+             :src="route('media.show', car.media[0].id)"
+             alt="" />
+
         <p class="text-right">{{ price }}</p>
         <hr>
         <table class="w-full">

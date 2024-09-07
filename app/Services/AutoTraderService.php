@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Car;
+use Illuminate\Support\Facades\Cache;
 use Olsgreen\AutoTrader\Client;
 
 class AutoTraderService
@@ -17,7 +18,13 @@ class AutoTraderService
         $this->advertiser_id = config('autotrader.advertiser_id');
 
         $api = new Client(['sandbox' => true]);
-        $token = $api->authentication()->getAccessToken($key, $secret);
+
+        if (Cache::get('autotrader_access_token')) {
+            $token = Cache::get('autotrader_access_token');
+        } else {
+            $token = $api->authentication()->getAccessToken($key, $secret);
+            Cache::put('autotrader_access_token', $token, 900);
+        }
 
         // once you have your access token you can create client instances like:
         $this->client = new Client(['access_token' => $token, 'sandbox' => true]);
@@ -35,7 +42,6 @@ class AutoTraderService
         $data = json_decode($data, true);
         $car->at_data = $data;
 
-        //dd($data);
 
         $car->description = $data['data']['adverts']['retailAdverts']['description'] ?? $data['data']['vehicle']['make'] .' '. $data['data']['vehicle']['model'];
         $car->at_description = $data['data']['adverts']['retailAdverts']['description'] ?? $data['data']['vehicle']['make'] .' '. $data['data']['vehicle']['model'];
@@ -43,31 +49,52 @@ class AutoTraderService
         $car->description2 = $data['data']['adverts']['retailAdverts']['description2'] ?? $data['data']['vehicle']['derivative'];
         $car->at_description2 = $data['data']['adverts']['retailAdverts']['description2'] ?? $data['data']['vehicle']['derivative'];
 
-        $car->at_published = $data['data']['adverts']['retailAdverts']['autotraderAdvert']['status'] ?? 'NOT_PUBLISHED';
+        $car->at_published = $data['data']['adverts']['retailAdverts']['advertiserAdvert']['status'] ?? 'NOT_PUBLISHED';
 
         $car->save();
 
         if (count($data['data']['media']['images'])) {
+            // clear images
+            $car->clearMediaCollection('images');
+
             foreach ($data['data']['media']['images'] as $image) {
                 $car->addMediaFromUrl($image['href'])->toMediaCollection('images');
             }
         }
 
         if ($data['data']['media']['video']['href'] ?? null) {
+            // clear video
+            $car->clearMediaCollection('videos');
+
             $car->addMediaFromUrl($data['data']['media']['video']['href'])->toMediaCollection('videos');
         }
 
+        $logs[] = [
+                'stock_id' => $stock_id,
+                'car' => $car->id,
+                'msg' => 'Car updated successfully',
+            ];
+
         return response()->json([
             'success' => true,
+            'logs' => $logs,
         ]);
     }
 
     public function createNewCar($stock_id)
     {
+        $logs = [];
+
         $vehicles = app()->make(AutoTraderService::class)->stock();
 
         foreach ($vehicles['results'] as $vehicle) {
-            if ($stock_id != $vehicle['metadata']['stockId']) continue;
+            if ($stock_id != $vehicle['metadata']['stockId']) {
+                $logs[] = [
+                    'stock_id' => $stock_id,
+                    'msg' => 'Stock ID not found in the current batch',
+                ];
+                continue;
+            }
 
             $car = Car::create([
                 'description' => $vehicle['adverts']['retailAdverts']['description'] ?? $vehicle['vehicle']['make'] .' '. $vehicle['vehicle']['model'],
@@ -106,11 +133,15 @@ class AutoTraderService
                 $car->addMediaFromUrl($vehicle['media']['video']['href'])->toMediaCollection('videos');
             }
 
-            $this->info('Added car: ' . $car->id . ' - ' . $car->description);
+            $logs[] = [
+                'stock_id' => $stock_id,
+                'msg' => 'Car created successfully',
+            ];
         }
 
         return response()->json([
             'success' => true,
+            'logs' => $logs,
         ]);
     }
 }

@@ -16,6 +16,10 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+Route::get('/car/{id}', function() {
+   return Car::find(request()->id);
+});
+
 Route::get('aa', function() {
     $car = app()->make(AutoTraderService::class)->stock()['results'][0];
 

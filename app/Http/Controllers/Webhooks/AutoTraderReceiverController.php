@@ -25,8 +25,6 @@ class AutoTraderReceiverController extends Controller
 
         $newAaData = json_decode($request->getContent(), true);
 
-
-
         $car = Car::where('at_stock_id', $newAaData)->first();
         if ($car) {
             $service = new AutoTraderService();
@@ -36,10 +34,13 @@ class AutoTraderReceiverController extends Controller
             return $service->createNewCar($newAaData['id']);
         }
 
-        // update attention grabber
+        // update attention grabber (completed)
+
         // update description
         // update description2
-        // update advertiseradvert not_published published
+
+        // update advertiseradvert not_published published done
+
         // updating features & images
     }
 }
