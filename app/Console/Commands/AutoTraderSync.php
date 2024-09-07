@@ -37,7 +37,7 @@ class AutoTraderSync extends Command
 
         foreach ($vehicles['results'] as $vehicle) {
             $current_images = 0;
-            $limit = 2;
+            $limit = 100;
 
             $car = \App\Models\Car::create([
                 'description' => $vehicle['adverts']['retailAdverts']['description'] ?? $vehicle['vehicle']['make'] .' '. $vehicle['vehicle']['model'],
