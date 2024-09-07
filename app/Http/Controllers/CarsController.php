@@ -22,4 +22,10 @@ class CarsController extends Controller
             'car' => Car::where('at_published', 'PUBLISHED')->with('media')->findOrFail($id),
         ]);
     }
+
+    public function destroy($id)
+    {
+        Car::find($id)->delete();
+        return redirect()->route('cars.index');
+    }
 }

@@ -66,12 +66,12 @@ class AutoTraderSync extends Command
                 //if ($current_images >= $limit) {
                 //    continue;
                 //}
-                $car->addMediaFromUrl($image['href'])->toMediaCollection('images');
+                //$car->addMediaFromUrl($image['href'])->toMediaCollection('images');
                 //++$current_images;
             }
 
             if ($vehicle['media']['video']['href']) {
-                $car->addMediaFromUrl($vehicle['media']['video']['href'])->toMediaCollection('videos');
+                //$car->addMediaFromUrl($vehicle['media']['video']['href'])->toMediaCollection('videos');
             }
 
             $this->info('Added car: ' . $car->id . ' - ' . $car->description);

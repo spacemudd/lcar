@@ -75,6 +75,7 @@ Route::get('/financing', [FinancingController::class, 'index'])->name('financing
 
 
 //
+Route::delete('/admin/cars/{id}', [CarsController::class, 'destroy'])->name('admin.cars.delete');
 Route::get('/admin/cars', [\App\Http\Controllers\Admin\CarsController::class, 'index'])->name('admin.cars.index');
 Route::get('/admin/cars/{id}', [\App\Http\Controllers\Admin\CarsController::class, 'show'])->name('admin.cars.show');
 

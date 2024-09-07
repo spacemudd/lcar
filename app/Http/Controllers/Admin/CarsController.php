@@ -20,7 +20,7 @@ class CarsController extends Controller
     public function show($id)
     {
         return Inertia::render('Admin/Cars/Show', [
-            'car' => Car::with('media')->find($id),
+            'car' => Car::with('media')->findOrFail($id),
         ]);
     }
 

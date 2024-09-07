@@ -47,6 +47,9 @@ class Car extends Model implements HasMedia
 
     public function getPriceHumanAttribute()
     {
+        if ($this->at_data['data'] ?? false) {
+            return '£'.number_format($this->at_data['data']['adverts']['retailAdverts']['totalPrice']['amountGBP'] ?? $this->price, 2);
+        }
         return '£'.number_format($this->price, 2);
     }
 }

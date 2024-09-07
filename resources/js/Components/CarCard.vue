@@ -21,10 +21,23 @@ export default {
         </template>
         <h2 class="text-3xl text-black" :id="car.id">{{ description }}</h2>
         <p>{{ description2 }}</p>
-        <img class="mt-2 border-2 border-black"
-             v-if="car.media.length"
-             :src="route('media.show', car.media[0].id)"
+        <!--<img class="mt-2 border-2 border-black"-->
+        <!--     v-if="car.media.length"-->
+        <!--     :src="route('media.show', car.media[0].id)"-->
+        <!--     alt="" />-->
+
+        <template v-if="car.at_data && car.at_data.media">
+            <img class="mt-2 border-2 border-black"
+             v-if="car.at_data.media.images.length"
+             :src="car.at_data.media.images[0]['href']"
              alt="" />
+        </template>
+        <template v-else>
+            <img class="mt-2 border-2 border-black w-full"
+             src="/not_available.svg"
+             alt="" />
+        </template>
+
 
         <p class="text-right">{{ price }}</p>
         <hr>

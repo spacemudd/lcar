@@ -23,13 +23,21 @@ export default {
             this.formData.append('car_image', this.attachedFile);
         },
         uploadPhoto() {
-                axios.post(route('admin.cars.upload', this.car.id), this.formData)
-                    .then(response => {
-                        window.location.reload();
-                    }).catch(error => {
-                        throw error;
-                    });
-            },
+            axios.post(route('admin.cars.upload', this.car.id), this.formData)
+                .then(response => {
+                    window.location.reload();
+                }).catch(error => {
+                throw error;
+            });
+        },
+        deleteCar() {
+            axios.delete(route('admin.cars.delete', this.car.id))
+                .then(response => {
+                    window.location.href = route('admin.cars.index');
+                }).catch(error => {
+                throw error;
+            });
+        },
     },
     props: ['car'],
 }
@@ -51,10 +59,10 @@ export default {
                     <p>{{ car.description2 }}</p>
                     <br/>
                     <br/>
-                        <p v-for="image in car.media">
-                            {{ image.file_name }}
-                            <img :src="route('media.show', image.id)" alt="image" width="100">
-                        </p>
+                    <p v-for="image in car.media">
+                        {{ image.file_name }}
+                        <img :src="route('media.show', image.id)" alt="image" width="100">
+                    </p>
                 </div>
             </div>
         </div>
@@ -72,5 +80,8 @@ export default {
                 </PrimaryButton>
             </form>
         </div>
+
+
+        <PrimaryButton @click="deleteCar">Delete</PrimaryButton>
     </AppLayout>
 </template>
