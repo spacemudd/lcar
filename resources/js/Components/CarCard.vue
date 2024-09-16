@@ -26,31 +26,20 @@ export default {
         <!--     :src="route('media.show', car.media[0].id)"-->
         <!--     alt="" />-->
 
-        <template v-if="car.at_data.data">
-            <template v-if="car.at_data.data && car.at_data.data.media">
-                <img class="mt-2 border-2 border-black"
-                 v-if="car.at_data.data.media.images.length"
-                 :src="car.at_data.data.media.images[0]['href']"
-                 alt="" />
-            </template>
-            <template v-else>
-                <img class="mt-2 border-2 border-black w-full"
-                 src="/not_available.svg"
-                 alt="" />
-            </template>
-        </template>
-        <template v-else>
-            <template v-if="car.at_data && car.at_data.media">
+        <template v-if="car.media">
             <img class="mt-2 border-2 border-black"
-             v-if="car.at_data.media.images.length"
-             :src="car.at_data.media.images[0]['href']"
-             alt="" />
+                 v-if="car.media.length"
+                 :src="route('media.show', car.media[0].id)"
+                 alt="" />
+            <!--<img class="mt-2 border-2 border-black"-->
+            <!-- v-if="car.at_data.media.images.length"-->
+            <!-- :src="car.at_data.media.images[0]['href']"-->
+            <!-- alt="" />-->
         </template>
         <template v-else>
             <img class="mt-2 border-2 border-black w-full"
-             src="/not_available.svg"
-             alt="" />
-        </template>
+                 src="/not_available.svg"
+                 alt="" />
         </template>
 
 
