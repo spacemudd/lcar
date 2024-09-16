@@ -26,7 +26,7 @@ export default {
         <!--     :src="route('media.show', car.media[0].id)"-->
         <!--     alt="" />-->
 
-        <template v-if="car.at_data && (typeof car.at_data.data != 'undefined')">
+        <template v-if="car.at_data.length">
             <img class="mt-2 border-2 border-black"
              v-if="car.at_data.media.images.length"
              :src="car.at_data.media.images[0]['href']"
