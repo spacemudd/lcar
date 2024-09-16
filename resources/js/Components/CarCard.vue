@@ -19,7 +19,7 @@ export default {
                 {{ car.at_data.data.adverts.retailAdverts.attentionGrabber }}
             </template>
         </template>
-        <h2 class="text-3xl text-black" :id="car.id">{{ description }}</h2>
+        <!--<h2 class="text-3xl text-black" :id="car.id">{{ description }}</h2>-->
         <p>{{ description2 }}</p>
         <!--<img class="mt-2 border-2 border-black"-->
         <!--     v-if="car.media.length"-->

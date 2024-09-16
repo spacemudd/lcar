@@ -40,8 +40,15 @@ class AutoTraderSync extends Command
             $limit = 100;
 
             $car = \App\Models\Car::create([
-                'description' => $vehicle['adverts']['retailAdverts']['description'] ?? $vehicle['vehicle']['make'] .' '. $vehicle['vehicle']['model'],
-                'description2' => $vehicle['adverts']['retailAdverts']['description2'] ?? $vehicle['vehicle']['derivative'],
+
+                // don't use make/model as description could be lengthy.
+                'description' =>
+                    $vehicle['adverts']['retailAdverts']['description'] ??
+                    $vehicle['vehicle']['make'] .' '. $vehicle['vehicle']['model'],
+
+                'description2' => $vehicle['adverts']['retailAdverts']['description2'] ??
+                    $vehicle['vehicle']['derivative'],
+
                 'long_description' => '',
                 'year' => $vehicle['vehicle']['yearOfManufacture'],
                 'engine_size' => $vehicle['vehicle']['badgeEngineSizeLitres'],
