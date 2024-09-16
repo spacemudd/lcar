@@ -43,6 +43,7 @@ class AutoTraderService
         $car->at_data = $data;
 
 
+        $car->mileage = $data['data']['vehicle']['odometerReadingMiles'];
         $car->description = $data['data']['adverts']['retailAdverts']['description'] ?? $data['data']['vehicle']['make'] .' '. $data['data']['vehicle']['model'];
         $car->at_description = $data['data']['adverts']['retailAdverts']['description'] ?? $data['data']['vehicle']['make'] .' '. $data['data']['vehicle']['model'];
 

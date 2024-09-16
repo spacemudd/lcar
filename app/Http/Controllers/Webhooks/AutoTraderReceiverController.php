@@ -15,15 +15,15 @@ class AutoTraderReceiverController extends Controller
     public function index(Request $request)
     {
         Log::info('Received AutoTrader webhook', ['request' => $request->getContent()]);
-        
+
         $textbefore = Str::before($request->header('autotrader-signature'), ', v1=');
         $timestamp = Str::after($textbefore, 't=');
         $sig = Str::after($request->header('autotrader-signature'), 'v1=');
 
         $hash = hash_hmac('sha256', $timestamp . '.' . $request->getContent(), config('autotrader.secret'));
 
-	if ($hash !== $sig) {
-	    \Log::error('Invalid sig');
+        if ($hash !== $sig) {
+            \Log::error('Invalid sig');
             //return response()->json(['error' => 'Invalid signature'], 401);
         }
 
