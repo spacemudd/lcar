@@ -7,12 +7,15 @@ use App\Models\Car;
 use App\Services\AutoTraderService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class AutoTraderReceiverController extends Controller
 {
     public function index(Request $request)
     {
+        Log::info('Received AutoTrader webhook', ['request' => $request->getContent()]);
+        
         $textbefore = Str::before($request->header('autotrader-signature'), ', v1=');
         $timestamp = Str::after($textbefore, 't=');
         $sig = Str::after($request->header('autotrader-signature'), 'v1=');
