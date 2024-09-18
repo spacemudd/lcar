@@ -48,8 +48,8 @@ class AutoTraderService
         $car->description = $data['data']['adverts']['retailAdverts']['description'] ?? $data['data']['vehicle']['make'] .' '. $data['data']['vehicle']['model'];
         $car->at_description = $data['data']['adverts']['retailAdverts']['description'] ?? $data['data']['vehicle']['make'] .' '. $data['data']['vehicle']['model'];
 
-        $car->description2 = $data['data']['adverts']['retailAdverts']['description2'] ?? $data['data']['vehicle']['derivative'];
-        $car->at_description2 = $data['data']['adverts']['retailAdverts']['description2'] ?? $data['data']['vehicle']['derivative'];
+        $car->description2 = $data['data']['adverts']['retailAdverts']['description2'] ?? null;
+        $car->at_description2 = $data['data']['adverts']['retailAdverts']['description2'] ?? null;
 
         $car->at_published = $data['data']['adverts']['retailAdverts']['advertiserAdvert']['status'] ?? 'NOT_PUBLISHED';
 
