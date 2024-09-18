@@ -83,24 +83,28 @@ class AutoTraderService
         ]);
     }
 
-    public function createNewCar($stock_id)
+    public function createNewCar($stock_id, $aa_data)
     {
         $logs = [];
 
-        $vehicles = app()->make(AutoTraderService::class)->stock();
+        //$vehicles = app()->make(AutoTraderService::class)->stock();
 
-        foreach ($vehicles['results'] as $vehicle) {
-            if ($stock_id != $vehicle['metadata']['stockId']) {
-                $logs[] = [
-                    'stock_id' => $stock_id,
-                    'msg' => 'Stock ID not found in the current batch',
-                ];
-                continue;
-            }
+
+
+        //foreach ($vehicles['results'] as $vehicle) {
+        //    if ($stock_id != $vehicle['metadata']['stockId']) {
+        //        $logs[] = [
+        //            'stock_id' => $stock_id,
+        //            'msg' => 'Stock ID not found in the current batch',
+        //        ];
+        //        continue;
+        //    }
+
+        $vehicle = $aa_data['data'];
 
             $car = Car::create([
-                'description' => $vehicle['adverts']['retailAdverts']['description'] ?? $vehicle['vehicle']['make'] .' '. $vehicle['vehicle']['model'],
-                'description2' => $vehicle['adverts']['retailAdverts']['description2'] ?? $vehicle['vehicle']['derivative'],
+                'description' => array_key_exists('description', $vehicle['adverts']['retailAdverts']) ? $vehicle['adverts']['retailAdverts']['description'] : null,
+                'description2' => array_key_exists('description2', $vehicle['adverts']['retailAdverts']) ? $vehicle['adverts']['retailAdverts']['description2'] : null,
                 'long_description' => '',
                 'year' => $vehicle['vehicle']['yearOfManufacture'],
                 'engine_size' => $vehicle['vehicle']['badgeEngineSizeLitres'],
@@ -115,8 +119,8 @@ class AutoTraderService
                 'at_make' => $vehicle['vehicle']['make'],
                 'at_model' => $vehicle['vehicle']['model'],
                 'at_derivative' => $vehicle['vehicle']['derivative'],
-                'at_description' => $vehicle['adverts']['retailAdverts']['description'],
-                'at_description2' => $vehicle['adverts']['retailAdverts']['description2'],
+                'at_description' => array_key_exists('description', $vehicle['adverts']['retailAdverts']) ? $vehicle['adverts']['retailAdverts']['description'] : null,
+                'at_description2' => array_key_exists('description2', $vehicle['adverts']['retailAdverts']) ? $vehicle['adverts']['retailAdverts']['description2'] : null,
                 'at_published' => $vehicle['adverts']['retailAdverts']['autotraderAdvert']['status'],
                 'at_total_price' => $vehicle['adverts']['retailAdverts']['totalPrice']['amountGBP'],
                 'at_last_synced' => now(),
@@ -131,15 +135,17 @@ class AutoTraderService
                 //++$current_images;
             }
 
-            if ($vehicle['media']['video']['href']) {
-                $car->addMediaFromUrl($vehicle['media']['video']['href'])->toMediaCollection('videos');
+            if (array_key_exists('href', $vehicle['media']['video'])) {
+                if ($vehicle['media']['video']['href']) {
+                    $car->addMediaFromUrl($vehicle['media']['video']['href'])->toMediaCollection('videos');
+                }
             }
 
             $logs[] = [
                 'stock_id' => $stock_id,
                 'msg' => 'Car created successfully',
             ];
-        }
+        //}
 
         return response()->json([
             'success' => true,

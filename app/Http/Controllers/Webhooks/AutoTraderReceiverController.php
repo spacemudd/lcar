@@ -35,7 +35,7 @@ class AutoTraderReceiverController extends Controller
             return $service->updateCarFromNotification($newAaData['id'], $request->getContent());
         } else {
             $service = new AutoTraderService();
-            return $service->createNewCar($newAaData['id']);
+            return $service->createNewCar($newAaData['id'], json_decode($request->getContent(), true));
         }
 
         // update attention grabber (completed)
