@@ -118,7 +118,7 @@ class AutoTraderService
                 'at_advertiserAdvert' => $vehicle['advertiser']['advertiserId'] ?? null,
                 'at_make' => $vehicle['vehicle']['make'] ?? null,
                 'at_model' => $vehicle['vehicle']['model'] ?? null,
-                'at_derivative' => $vehicle['vehicle']['derivative'] ?? null,
+                'at_derivative' => array_key_exists('derivative') ? $vehicle['vehicle']['derivative'] : null,
                 'at_description' => array_key_exists('description', $vehicle['adverts']['retailAdverts']) ? $vehicle['adverts']['retailAdverts']['description'] : null,
                 'at_description2' => array_key_exists('description2', $vehicle['adverts']['retailAdverts']) ? $vehicle['adverts']['retailAdverts']['description2'] : null,
                 'at_published' => $vehicle['adverts']['retailAdverts']['autotraderAdvert']['status'],
