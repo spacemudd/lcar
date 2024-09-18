@@ -108,7 +108,7 @@ class AutoTraderService
                 'price' => $vehicle['adverts']['retailAdverts']['totalPrice']['amountGBP'],
                 'fuel_type' => $vehicle['vehicle']['fuelType'],
                 'registration' => $vehicle['vehicle']['firstRegistrationDate'],
-                'owners' => $vehicle['vehicle']['owners'],
+                'owners' => $vehicle['vehicle']['owners'] ?? 0,
                 'emission_class' => $vehicle['vehicle']['emissionClass'],
                 'at_stock_id' => $vehicle['metadata']['stockId'],
                 'at_advertiserAdvert' => $vehicle['advertiser']['advertiserId'],
