@@ -9,6 +9,6 @@ class MediaController extends Controller
 {
     public function show($id, Request $request)
     {
-        return Media::find($id)->toInlineResponse($request);
+        return Media::findOrFail($id)->toInlineResponse($request);
     }
 }
