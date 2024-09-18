@@ -14,7 +14,7 @@ class AutoTraderReceiverController extends Controller
 {
     public function index(Request $request)
     {
-        Log::info('Received AutoTrader webhook', ['request' => $request->getContent()]);
+        Log::info('Received AutoTrader webhook', ['request' => json_encode($request->getContent())]);
 
         $textbefore = Str::before($request->header('autotrader-signature'), ', v1=');
         $timestamp = Str::after($textbefore, 't=');
