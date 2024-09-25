@@ -37,14 +37,5 @@ class AutoTraderReceiverController extends Controller
             $service = new AutoTraderService();
             return $service->createNewCar($newAaData['id'], json_decode($request->getContent(), true));
         }
-
-        // update attention grabber (completed)
-
-        // update description
-        // update description2
-
-        // update advertiseradvert not_published published done
-
-        // updating features & images
     }
 }
