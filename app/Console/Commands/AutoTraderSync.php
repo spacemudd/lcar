@@ -41,13 +41,8 @@ class AutoTraderSync extends Command
 
             $car = \App\Models\Car::create([
 
-                // don't use make/model as description could be lengthy.
-                'description' =>
-                    $vehicle['adverts']['retailAdverts']['description'] ??
-                    $vehicle['vehicle']['make'] .' '. $vehicle['vehicle']['model'],
-
-                'description2' => $vehicle['adverts']['retailAdverts']['description2'] ??
-                    $vehicle['vehicle']['derivative'],
+                'description' => array_key_exists('description', $vehicle['adverts']['retailAdverts']) ? $vehicle['adverts']['retailAdverts']['description'] : '',
+                'description2' => array_key_exists('description2', $vehicle['adverts']['retailAdverts']) ? $vehicle['adverts']['retailAdverts']['description2'] : '',
 
                 'long_description' => '',
                 'year' => $vehicle['vehicle']['yearOfManufacture'],

@@ -83,14 +83,11 @@ function handleImageError() {
 
                 <main>
                     <div class="relative bg-black rounded-lg overflow-hidden mt-10 p-5">
-                        <p class="text-4xl text-white pb-5" v-if="car.at_data.data">{{ car.at_data.data.adverts.retailAdverts.attentionGrabber }}</p>
                         <h2 class="text-5xl text-white font-bold text-center lg:text-left">
-                            {{ car.description }}
+                            {{ car.at_data.data.vehicle.make }} {{ car.at_data.data.vehicle.model }}
                         </h2>
-                        <p class="mt-5 text-2xl">
-                            {{ car.description2 }}
-                        </p>
-                        <div class="grid grid-cols-1 lg:grid-cols-2 mt-10 gap-5">
+                        <p class="text-4xl text-white pb-5" v-if="car.at_data.data">{{ car.at_data.data.adverts.retailAdverts.attentionGrabber }}</p>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                             <div>
                                 <a target="_blank" :href="route('media.show', car.media[0].id)">
                                     <img :src="route('media.show', car.media[0].id)" class="pb-5">
@@ -106,9 +103,6 @@ function handleImageError() {
                                 </div>
                             </div>
                             <div>
-                                <p class="hidden lg:block leading-8"
-                                   style="font-family:'Times New Roman';margin-top:-10px;"
-                                   v-html="car.long_description"></p>
 
                                 <div class="grid grid-cols-1 lg:grid-cols-3 mt-5 gap-5">
                                     <div v-for="(property, index) in {Price: car.price_human, Mileage: car.mileage, Fuel: car.fuel_type, Registration: car.registration, Owners:car.owners, 'Emission Class': car.emission_class}"
@@ -121,6 +115,17 @@ function handleImageError() {
                                 </div>
 
                                 <div class="mt-10">
+                                    <p class="hidden lg:block leading-8"
+                                       style="font-family:'Times New Roman';margin-top:-10px;"
+                                       v-if="car.description"
+                                       v-html="car.description"></p>
+                                    <p class="hidden lg:block leading-8"
+                                       style="font-family:'Times New Roman';margin-top:-10px;"
+                                       v-else
+                                       v-html="car.description2"></p>
+                                </div>
+
+                                <div class="mt-10">
                                     <a class="text-white border border-white p-2 hover:bg-white hover:text-black"
                                        :href="route('appointments.create')">
                                         Book an appointment
@@ -130,7 +135,7 @@ function handleImageError() {
                                 <div class="mt-10 text-white">
                                     <p><b>List of features:</b></p>
                                     <ul class="list-disc px-5 pt-5">
-                                        <li v-for="feature in car.at_data.features">
+                                        <li v-for="feature in car.at_data.data.features">
                                             {{ feature.name }}
                                         </li>
                                     </ul>
