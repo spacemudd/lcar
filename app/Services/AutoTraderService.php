@@ -41,7 +41,7 @@ class AutoTraderService
         $car->at_data = $data;
 
 
-        $car->price = array_key_exists('amountGBP', $data['data']['adverts']['retailAdverts']['totalPrice']['amountGBP']) ?: null;
+        $car->price = array_key_exists('amountGBP', $data['data']['adverts']['retailAdverts']['totalPrice']) ?: null;
         $car->mileage = $data['data']['vehicle']['odometerReadingMiles'];
         $car->description = $data['data']['adverts']['retailAdverts']['description'] ?? $data['data']['vehicle']['make'] .' '. $data['data']['vehicle']['model'];
         $car->at_description = $data['data']['adverts']['retailAdverts']['description'] ?? $data['data']['vehicle']['make'] .' '. $data['data']['vehicle']['model'];
