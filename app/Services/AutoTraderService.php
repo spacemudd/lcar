@@ -35,6 +35,9 @@ class AutoTraderService
     {
         $car = Car::where('at_stock_id', $stock_id)->first();
 
+        $data = json_decode($data, true);
+        $car->at_data = $data;
+
         if ($car->aa_last_webhook_at) {
             if (Carbon::parse($data['time']) <= $car->aa_last_webhook_at) {
                 return response()->json([
@@ -43,10 +46,6 @@ class AutoTraderService
                 ]);
             }
         }
-
-        $data = json_decode($data, true);
-        $car->at_data = $data;
-
 
         $car->price = array_key_exists('amountGBP', $data['data']['adverts']['retailAdverts']['totalPrice']) ? $data['data']['adverts']['retailAdverts']['totalPrice']['amountGBP'] : null;
         $car->mileage = array_key_exists('odometerReadingMiles', $data['data']['vehicle']) ? $data['data']['vehicle']['odometerReadingMiles'] : '';
