@@ -29,7 +29,7 @@ export default {
     <div class="relative w-full bg-white py-10 mt-20">
         <div class="flex flex-col items-center justify-center text-black">
             <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                <h2 class="text-5xl mt-10 text-center lg:text-left">The Upcoming Events ~</h2>
+                <h2 class="text-5xl mt-10 text-center lg:text-left">Upcoming Events ~</h2>
 
                 <div class="mt-5">
                     <event-record day="17"
