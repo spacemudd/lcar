@@ -11,7 +11,7 @@ class AutoTraderService
     private $client;
     private $advertiser_id;
 
-    public function __construct()
+    public function stock()
     {
         if (Cache::get('autotrader_access_token')) {
             $token = Cache::get('autotrader_access_token');
@@ -26,10 +26,7 @@ class AutoTraderService
 
         // once you have your access token you can create client instances like:
         $this->client = new Client(['access_token' => $token, 'sandbox' => true]);
-    }
 
-    public function stock()
-    {
         return $this->client->stock()->all($this->advertiser_id, 1, 50);
     }
 
@@ -41,13 +38,14 @@ class AutoTraderService
         $car->at_data = $data;
 
 
-        $car->price = array_key_exists('amountGBP', $data['data']['adverts']['retailAdverts']['totalPrice']) ?: null;
-        $car->mileage = $data['data']['vehicle']['odometerReadingMiles'];
-        $car->description = $data['data']['adverts']['retailAdverts']['description'] ?? $data['data']['vehicle']['make'] .' '. $data['data']['vehicle']['model'];
-        $car->at_description = $data['data']['adverts']['retailAdverts']['description'] ?? $data['data']['vehicle']['make'] .' '. $data['data']['vehicle']['model'];
+        $car->price = array_key_exists('amountGBP', $data['data']['adverts']['retailAdverts']['totalPrice']) ? $data['data']['adverts']['retailAdverts']['totalPrice']['amountGBP'] : null;
+        $car->mileage = array_key_exists('odometerReadingMiles', $data['data']['vehicle']) ? $data['data']['vehicle']['odometerReadingMiles'] : '';
 
-        $car->description2 = $data['data']['adverts']['retailAdverts']['description2'] ?? null;
-        $car->at_description2 = $data['data']['adverts']['retailAdverts']['description2'] ?? null;
+        $car->description = array_key_exists('description', $data['data']['adverts']['retailAdverts']['description']) ? $data['data']['adverts']['retailAdverts']['description'] : null;
+        $car->at_description = array_key_exists('description', $data['data']['adverts']['retailAdverts']['description']) ? $data['data']['adverts']['retailAdverts']['description'] : null;
+
+        $car->description2 = array_key_exists('description2', $data['data']['adverts']['retailAdverts']['description2']) ? $data['data']['adverts']['retailAdverts']['description2'] : null;
+        $car->at_description2 = array_key_exists('description2', $data['data']['adverts']['retailAdverts']['description2']) ? $data['data']['adverts']['retailAdverts']['description2'] : null;
 
         $car->at_published = $data['data']['adverts']['retailAdverts']['advertiserAdvert']['status'] ?? 'NOT_PUBLISHED';
 
@@ -91,7 +89,7 @@ class AutoTraderService
             'description' => array_key_exists('description', $vehicle['adverts']['retailAdverts']) ? $vehicle['adverts']['retailAdverts']['description'] : null,
             'description2' => array_key_exists('description2', $vehicle['adverts']['retailAdverts']) ? $vehicle['adverts']['retailAdverts']['description2'] : null,
             'long_description' => '',
-            'year' => $vehicle['vehicle']['yearOfManufacture'],
+            'year' => array_key_exists('yearOfManufacture', $vehicle['vehicle']['yearOfManufacture']) ? $vehicle['vehicle']['yearOfManufacture'] : null,
             'engine_size' => array_key_exists('badgeEngineSizeLitres', $vehicle['vehicle']) ? $vehicle['vehicle']['badgeEngineSizeLitres'] : null,
             'mileage' => array_key_exists('odometerReadingMiles', $vehicle['vehicle']) ? $vehicle['vehicle']['odometerReadingMiles'] : null,
             'price' => $vehicle['adverts']['retailAdverts']['totalPrice']['amountGBP'],
@@ -107,7 +105,7 @@ class AutoTraderService
             'at_description' => array_key_exists('description', $vehicle['adverts']['retailAdverts']) ? $vehicle['adverts']['retailAdverts']['description'] : null,
             'at_description2' => array_key_exists('description2', $vehicle['adverts']['retailAdverts']) ? $vehicle['adverts']['retailAdverts']['description2'] : null,
             'at_published' => $vehicle['adverts']['retailAdverts']['autotraderAdvert']['status'],
-            'at_total_price' => $vehicle['adverts']['retailAdverts']['totalPrice']['amountGBP'] ?? null,
+            'at_total_price' => array_key_exists('amountGBP', $vehicle['adverts']['retailAdverts']['totalPrice']) ? $vehicle['adverts']['retailAdverts']['totalPrice']['amountGBP'] : null,
             'at_last_synced' => now(),
             'at_data' => $vehicle,
         ]);
