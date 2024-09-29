@@ -92,7 +92,7 @@ class AutoTraderService
             'year' => array_key_exists('yearOfManufacture', $vehicle['vehicle']) ? $vehicle['vehicle']['yearOfManufacture'] : null,
             'engine_size' => array_key_exists('badgeEngineSizeLitres', $vehicle['vehicle']) ? $vehicle['vehicle']['badgeEngineSizeLitres'] : null,
             'mileage' => array_key_exists('odometerReadingMiles', $vehicle['vehicle']) ? $vehicle['vehicle']['odometerReadingMiles'] : null,
-            'price' => array_key_exists('amountGBP', $vehicle['adverts']['retailAdverts']['totalPrice']['amountGBP']) ? $vehicle['adverts']['retailAdverts']['totalPrice']['amountGBP'] : null,
+            'price' => array_key_exists('amountGBP', $vehicle['adverts']['retailAdverts']['totalPrice']) ? $vehicle['adverts']['retailAdverts']['totalPrice']['amountGBP'] : null,
             'fuel_type' => array_key_exists('fuelType', $vehicle['vehicle']) ? $vehicle['vehicle']['fuelType'] : null,
             'registration' => array_key_exists('firstRegistrationDate', $vehicle['vehicle']) ? $vehicle['vehicle']['firstRegistrationDate'] : '',
             'owners' => $vehicle['vehicle']['owners'] ?? 0,
