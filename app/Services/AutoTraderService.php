@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Car;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Olsgreen\AutoTrader\Client;
 
@@ -34,6 +35,15 @@ class AutoTraderService
     {
         $car = Car::where('at_stock_id', $stock_id)->first();
 
+        if ($car->aa_last_webhook_at) {
+            if (Carbon::parse($data['time']) <= $car->aa_last_webhook_at) {
+                return response()->json([
+                    'success' => false,
+                    'msg' => 'Car already updated on: ' . $car->aa_last_webhook_at. ' (received webhook time: '. $data['time'] .')',
+                ]);
+            }
+        }
+
         $data = json_decode($data, true);
         $car->at_data = $data;
 
@@ -48,6 +58,7 @@ class AutoTraderService
         $car->at_description2 = array_key_exists('description2', $data['data']['adverts']['retailAdverts']) ? $data['data']['adverts']['retailAdverts']['description2'] : null;
 
         $car->at_published = $data['data']['adverts']['retailAdverts']['advertiserAdvert']['status'] ?? 'NOT_PUBLISHED';
+        $car->aa_last_webhook_at = Carbon::parse($data['time']);
 
         $car->save();
 
@@ -107,6 +118,7 @@ class AutoTraderService
             'at_published' => $vehicle['adverts']['retailAdverts']['autotraderAdvert']['status'],
             'at_total_price' => array_key_exists('amountGBP', $vehicle['adverts']['retailAdverts']['totalPrice']) ? $vehicle['adverts']['retailAdverts']['totalPrice']['amountGBP'] : null,
             'at_last_synced' => now(),
+            'aa_last_webhook_at' => Carbon::parse($aa_data['time']),
             'at_data' => $vehicle,
         ]);
 
