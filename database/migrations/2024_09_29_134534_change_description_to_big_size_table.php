@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('cars', function (Blueprint $table) {
-            $table->longText('description')->change();
-            $table->longText('description2')->change();
-            $table->longText('at_description')->change();
-            $table->longText('at_description2')->change();
+            $table->longText('description')->nullable()->change();
+            $table->longText('description2')->nullable()->change();
+            $table->longText('at_description')->nullable()->change();
+            $table->longText('at_description2')->nullable()->change();
         });
     }
 
