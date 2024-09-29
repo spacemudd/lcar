@@ -41,11 +41,11 @@ class AutoTraderService
         $car->price = array_key_exists('amountGBP', $data['data']['adverts']['retailAdverts']['totalPrice']) ? $data['data']['adverts']['retailAdverts']['totalPrice']['amountGBP'] : null;
         $car->mileage = array_key_exists('odometerReadingMiles', $data['data']['vehicle']) ? $data['data']['vehicle']['odometerReadingMiles'] : '';
 
-        $car->description = array_key_exists('description', $data['data']['adverts']['retailAdverts']['description']) ? $data['data']['adverts']['retailAdverts']['description'] : null;
-        $car->at_description = array_key_exists('description', $data['data']['adverts']['retailAdverts']['description']) ? $data['data']['adverts']['retailAdverts']['description'] : null;
+        $car->description = array_key_exists('description', $data['data']['adverts']['retailAdverts']) ? $data['data']['adverts']['retailAdverts']['description'] : null;
+        $car->at_description = array_key_exists('description', $data['data']['adverts']['retailAdverts']) ? $data['data']['adverts']['retailAdverts']['description'] : null;
 
-        $car->description2 = array_key_exists('description2', $data['data']['adverts']['retailAdverts']['description2']) ? $data['data']['adverts']['retailAdverts']['description2'] : null;
-        $car->at_description2 = array_key_exists('description2', $data['data']['adverts']['retailAdverts']['description2']) ? $data['data']['adverts']['retailAdverts']['description2'] : null;
+        $car->description2 = array_key_exists('description2', $data['data']['adverts']['retailAdverts']) ? $data['data']['adverts']['retailAdverts']['description2'] : null;
+        $car->at_description2 = array_key_exists('description2', $data['data']['adverts']['retailAdverts']) ? $data['data']['adverts']['retailAdverts']['description2'] : null;
 
         $car->at_published = $data['data']['adverts']['retailAdverts']['advertiserAdvert']['status'] ?? 'NOT_PUBLISHED';
 
