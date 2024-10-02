@@ -31,7 +31,7 @@ export default {
             <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                 <h2 class="text-5xl mt-10 text-center lg:text-left">Upcoming Events ~</h2>
 
-                <div class="mt-5">
+                <div class="mt-5 opacity-25">
                     <event-record day="17"
                                   month="Aug"
                                   title="Showroom Grand Opening 2024"
