@@ -115,11 +115,11 @@ function handleImageError() {
                                 </div>
 
                                 <div class="mt-10">
-                                    <p class="hidden lg:block leading-8"
+                                    <p class="hidden lg:block leading-8 text-white"
                                        style="font-family:'Times New Roman';margin-top:-10px;"
                                        v-if="car.description"
                                        v-html="car.description"></p>
-                                    <p class="hidden lg:block leading-8"
+                                    <p class="hidden lg:block leading-8 text-white"
                                        style="font-family:'Times New Roman';margin-top:-10px;"
                                        v-else
                                        v-html="car.description2"></p>
@@ -144,8 +144,9 @@ function handleImageError() {
                             </div>
                         </div>
 
-                        <div class="mt-5 block lg:hidden">
-                            <p v-html="car.long_description"></p>
+                        <div class="mt-5 block lg:hidden text-white">
+                            <p v-if="car.description" v-html="car.description"></p>
+                            <p v-if="car.description2" v-html="car.description2"></p>
                         </div>
 
                     </div>
