@@ -23,13 +23,13 @@ class AutoTraderSync extends Command
      */
     protected $description = 'Command description';
 
-
-
     /**
      * Execute the console command.
      */
     public function handle()
     {
+        $counter = 0;
+
         $vehicles = app()->make(AutoTraderService::class)->stock();
 
         Media::truncate();
@@ -51,7 +51,7 @@ class AutoTraderSync extends Command
                 'price' => $vehicle['adverts']['retailAdverts']['totalPrice']['amountGBP'],
                 'fuel_type' => $vehicle['vehicle']['fuelType'],
                 'registration' => $vehicle['vehicle']['firstRegistrationDate'],
-                'owners' => $vehicle['vehicle']['owners'],
+                'owners' => $vehicle['vehicle']['owners'] ?? 0,
                 'emission_class' => $vehicle['vehicle']['emissionClass'],
                 'at_stock_id' => $vehicle['metadata']['stockId'],
                 'at_advertiserAdvert' => $vehicle['advertiser']['advertiserId'],
@@ -63,7 +63,7 @@ class AutoTraderSync extends Command
                 'at_published' => $vehicle['adverts']['retailAdverts']['autotraderAdvert']['status'],
                 'at_total_price' => $vehicle['adverts']['retailAdverts']['totalPrice']['amountGBP'],
                 'at_last_synced' => now(),
-                'at_data' => $vehicle,
+                'at_data' => ['data' => $vehicle],
             ]);
 
             foreach ($vehicle['media']['images'] as $image) {
@@ -78,7 +78,7 @@ class AutoTraderSync extends Command
                 $car->addMediaFromUrl($vehicle['media']['video']['href'])->toMediaCollection('videos');
             }
 
-            $this->info('Added car: ' . $car->id . ' - ' . $car->description);
+            $this->info('Added car: ' . $car->id. ' - Counter: '. ++$counter);
         }
     }
 }

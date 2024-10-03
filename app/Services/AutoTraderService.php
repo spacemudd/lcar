@@ -14,19 +14,20 @@ class AutoTraderService
 
     public function stock()
     {
+        $this->advertiser_id = config('autotrader.advertiser_id');
+
         if (Cache::get('autotrader_access_token')) {
             $token = Cache::get('autotrader_access_token');
         } else {
             $key = config('autotrader.key');
             $secret = config('autotrader.secret');
-            $this->advertiser_id = config('autotrader.advertiser_id');
-            $api = new Client(['sandbox' => true]);
+            $api = new Client(['sandbox' => false]);
             $token = $api->authentication()->getAccessToken($key, $secret);
             Cache::put('autotrader_access_token', $token, 900);
         }
 
         // once you have your access token you can create client instances like:
-        $this->client = new Client(['access_token' => $token, 'sandbox' => true]);
+        $this->client = new Client(['access_token' => $token, 'sandbox' => false]);
 
         return $this->client->stock()->all($this->advertiser_id, 1, 50);
     }
