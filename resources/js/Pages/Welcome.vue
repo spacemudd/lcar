@@ -32,7 +32,7 @@ function handleImageError() {
 
 <template>
     <Head title="Welcome" />
-    <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
+    <div class="bg-black text-white/50">
         <!--<img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" />-->
         <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="/bg-2.svg" />
         <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
@@ -140,6 +140,7 @@ function handleImageError() {
                     <h2 class="text-5xl mt-10 text-center lg:text-left">Upcoming Events ~</h2>
 
                     <div class="mt-5 opacity-25">
+                        <p class="my-5">Past events</p>
                         <event-record day="17"
                                   month="Aug"
                                   title="Showroom Grand Opening 2024"
@@ -156,21 +157,21 @@ function handleImageError() {
             <div class="flex flex-col items-center justify-center text-white py-10"
                  style="background-image: url('/car_images/corvette.jpg');background-size: cover;background-position: center">
                 <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <h2 class="text-5xl mt-10 text-center lg:text-left">Gallery</h2>
-                    <p class="mt-2 text-3xl text-center lg:text-left">Enjoy a carefully handpicked collection of photos and merch from Luxuria World.</p>
+                    <h2 class="text-5xl mt-10 text-center lg:text-left">Take a forward step now.</h2>
+                    <p class="mt-2 text-3xl text-center lg:text-left">Enjoy a carefully handpicked collection from the Luxuria World.</p>
                     <div class="mt-5 flex-row lg:flex gap-10 justify-center">
-                        <a href="#">
-                            <div class="bg-white text-black flex justify-center items-center align-bottom my-5"
-                                 style="background-image:url('/car_images/garage.jpg');background-size: cover;background-position: center"
-                            >
-                                <div class="p-20">
-                                    <h2 class="bg-black text-white px-2">Wallpapers</h2>
-                                </div>
-                            </div>
-                        </a>
+                        <!--<a href="#">-->
+                        <!--    <div class="bg-white text-black flex justify-center items-center align-bottom my-5"-->
+                        <!--         style="background-image:url('/car_images/garage.jpg');background-size: cover;background-position: center"-->
+                        <!--    >-->
+                        <!--        <div class="p-20">-->
+                        <!--            <h2 class="bg-black text-white px-2">Wallpapers</h2>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</a>-->
 
                         <div class="relative bg-black rounded-lg overflow-hidden">
-                            <a href="#">
+                            <a :href="route('cars.index')">
                                  <video
                                     src="/car_images/ghost.mp4"
                                     autoplay
@@ -180,21 +181,21 @@ function handleImageError() {
                                     class="absolute inset-0 object-cover transition duration-300 opacity-75"
                                 />
                                 <div class="w-full h-full align-items-center justify-center items-center flex text-center">
-                                    <h2 class="w-[400px] mt-10 lg:mt-0" style="min-height: 150px;">
-                                        Videos
+                                    <h2 class="w-[400px] mt-10 pt-10 lg:mt-0 bg-black" style="min-height: 150px;">
+                                        Showroom
                                     </h2>
                                 </div>
                             </a>
                         </div>
-                        <a href="#">
-                            <div class="bg-white text-black flex justify-center items-center align-bottom my-5"
-                                 style="background-image:url('/car_images/range.png');background-size: cover;background-position: center"
-                            >
-                                <div class="p-20">
-                                    <h2 class="bg-black text-white px-2">Showroom</h2>
-                                </div>
-                            </div>
-                        </a>
+                        <!--<a href="#">-->
+                        <!--    <div class="bg-white text-black flex justify-center items-center align-bottom my-5"-->
+                        <!--         style="background-image:url('/car_images/range.png');background-size: cover;background-position: center"-->
+                        <!--    >-->
+                        <!--        <div class="p-20">-->
+                        <!--            <h2 class="bg-black text-white px-2">Showroom</h2>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</a>-->
                     </div>
                 </div>
             </div>
@@ -203,7 +204,7 @@ function handleImageError() {
         <contact-us></contact-us>
 
         <footer class="p-10 lg:p-20 text-xs text-black dark:text-white/70" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'">
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
+            <div class="flex gap-20 justify-center">
                 <div>
                     <h3 class="font-bold">Navigation</h3>
                     <ul class="list-disc">
@@ -218,6 +219,7 @@ function handleImageError() {
                 </div>
                 <div>
                     <h3 class="font-bold">Headquarter</h3>
+                    <img src="/luxuria_logo_text_white.png" class="my-2" style="max-width:100px" alt="">
                     <p>Unit 5a Keer Park, Carnforth, Lancashire</p>
                     <p>+44 1524 488800</p>
                     <p>info@luxuria-auto.co.uk</p>

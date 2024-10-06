@@ -51,6 +51,8 @@ export default {
                             +44 1524 488800<br/>
                             info@luxuria-auto.co.uk
                         </p>
+                        <iframe class="hidden lg:block" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d161.1832633315402!2d-2.7700579155145335!3d54.131742451529064!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487c9ca48a8140bd%3A0x6293c1df4c6e6bbd!2sKeer%20Park!5e0!3m2!1sen!2ssa!4v1728211474421!5m2!1sen!2ssa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe class="block lg:hidden" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d161.1832633315402!2d-2.7700579155145335!3d54.131742451529064!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487c9ca48a8140bd%3A0x6293c1df4c6e6bbd!2sKeer%20Park!5e0!3m2!1sen!2ssa!4v1728211474421!5m2!1sen!2ssa" width="380" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
