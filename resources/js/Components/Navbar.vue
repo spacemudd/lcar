@@ -46,12 +46,12 @@ export default {
                         >
                             About
                         </Link>
-                        <Link
-                            :href="route('testimonials.index')"
-                            class="rounded-md px-3 py-2 ring-1 ring-transparent transition focus:outline-none focus-visible:ring-[#FF2D20] text-white hover:text-white/80 focus-visible:ring-white"
-                        >
-                            Testimonials
-                        </Link>
+                        <!--<Link-->
+                        <!--    :href="route('testimonials.index')"-->
+                        <!--    class="rounded-md px-3 py-2 ring-1 ring-transparent transition focus:outline-none focus-visible:ring-[#FF2D20] text-white hover:text-white/80 focus-visible:ring-white"-->
+                        <!--&gt;-->
+                        <!--    Testimonials-->
+                        <!--</Link>-->
                         <Link
                             :href="route('financing.index')"
                             class="rounded-md px-3 py-2 ring-1 ring-transparent transition focus:outline-none focus-visible:ring-[#FF2D20] text-white hover:text-white/80 focus-visible:ring-white"

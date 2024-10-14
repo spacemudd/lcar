@@ -2,6 +2,7 @@
 import { Head, Link } from '@inertiajs/vue3';
 import { useForm } from '@inertiajs/vue3';
 import Navbar from "@/Components/Navbar.vue";
+import BottomLayout from "@/Layouts/BottomLayout.vue";
 
 defineProps({
     canLogin: {
@@ -47,7 +48,7 @@ function handleImageError() {
 
 <template>
     <Head title="Appointment" />
-    <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
+    <div class="bg-black text-white/50">
         <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="/bg-2.svg" />
         <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
             <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
@@ -134,21 +135,7 @@ function handleImageError() {
             </div>
         </div>
 
-        <div class="relative w-full bg-white py-10 mt-20">
-            <div class="flex flex-col items-center justify-center text-black">
-                <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <h2 class="text-5xl mt-10 text-center lg:text-left">Events</h2>
-                    <p class="mt-10 text-center lg:text-left"><i>No upcoming events are available as of now.</i></p>
-
-                    <hr class="mt-10">
-                    <h2 class="text-5xl mt-10 text-center lg:text-left">Contact Us</h2>
-                    <p class="mt-10 text-center lg:text-left">
-                        Unit 5a Keer Park, Carnforth, Lancashire<br/>
-                        +44 1524 488800<br/>
-                        info@luxuria-auto.co.uk
-                    </p>
-                </div>
-            </div>
-        </div>
+        <bottom-layout>
+        </bottom-layout>
     </div>
 </template>

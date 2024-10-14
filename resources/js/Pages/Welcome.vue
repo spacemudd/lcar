@@ -4,6 +4,8 @@ import EventRecord from "@/Components/EventRecord.vue";
 import NewsletterSignup from "@/Components/NewsletterSignup.vue";
 import ContactUs from "@/Components/ContactUs.vue";
 import Navbar from "@/Components/Navbar.vue";
+import CarCard from "@/Components/CarCard.vue";
+import FeaturedCarsSlider from "@/Components/FeaturedCarsSlider.vue";
 
 defineProps({
     canLogin: {
@@ -20,6 +22,10 @@ defineProps({
         type: String,
         required: true,
     },
+    cars: {
+        type: Array,
+        required: false,
+    }
 });
 
 function handleImageError() {
@@ -40,7 +46,8 @@ function handleImageError() {
                 <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
                     <div class="flex lg:justify-left lg:col-span-1">
                         <a href="/">
-                            <img id="background" class="max-w-[150px] lg:max-w-[200px]" src="/luxuria_logo_text_white.png" />
+                            <!--<img id="background" class="max-w-[150px] lg:max-w-[200px]" src="/luxuria_logo_text_white.png" />-->
+                            <img id="background" class="max-w-[150px] lg:max-w-[200px]" src="/whitelogocropped.png" />
                         </a>
                     </div>
                     <navbar></navbar>
@@ -56,6 +63,8 @@ function handleImageError() {
                 <main class="mt-6">
                     <!-- a black bg header with an image of car -->
 
+                                        <featured-cars-slider class="mt-20" :cars="cars"></featured-cars-slider>
+
                     <div class="relative bg-black rounded-lg overflow-hidden mt-10">
                         <div class="relative z-10 px-6 py-12 text-white">
                             <h1 class="text-7xl font-bold opacity-100">Your gateway to luxury.</h1>
@@ -64,14 +73,14 @@ function handleImageError() {
                                 Rolls-Royce, each representing the pinnacle of elegance and performance.
                             </p>
                             <div class="flex flex-col lg:flex-row gap-2 mt-10">
-                                <div>
-                                    <a target="_blank" href="https://www.instagram.com/Luxuria_uk" class="hover:bg-yellow-800 hover:text-white bg-yellow-600 text-black px-2 rounded text-bold text-2xl">
-                                        Visit us today
-                                    </a>
-                                </div>
+                                <!--<div>-->
+                                <!--    <a target="_blank" href="https://www.instagram.com/Luxuria_uk" class="hover:bg-yellow-800 hover:text-white bg-yellow-600 text-black px-2 rounded text-bold text-2xl">-->
+                                <!--        Visit us today-->
+                                <!--    </a>-->
+                                <!--</div>-->
                                 <div>
                                     <a :href="route('cars.index')" class="hover:bg-yellow-800 hover:text-white bg-yellow-600 text-black px-2 rounded text-bold text-2xl">
-                                        Browse the finest collection
+                                        Browse latest collection
                                     </a>
                                 </div>
                             </div>
@@ -89,7 +98,7 @@ function handleImageError() {
                             loop
                             muted
                             playsinline
-                            class="absolute inset-0 object-cover w-full h-full transition duration-300 opacity-25"
+                            class="absolute inset-0 object-cover w-full h-full transition duration-300 opacity-50"
                         />
                     </div>
 
@@ -122,10 +131,9 @@ function handleImageError() {
 
         <div>
             <div class="flex flex-col items-center justify-center px-6">
-                <h2 class="text-6xl mt-10">
-                    Crafting Luxury Experiences Every Mile
+                <h2 class="text-6xl mt-10 uppercase">
+                    Signup to our emails
                 </h2>
-                <p class="mt-5">Be up to date with our latest news and services. Join the network of elite members.</p>
                 <!-- signup to newsletter button -->
                 <div class="mt-5">
                     <newsletter-signup></newsletter-signup>
@@ -137,17 +145,21 @@ function handleImageError() {
         <div class="relative w-full bg-white py-10 mt-20">
             <div class="flex flex-col items-center justify-center text-black">
                 <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <h2 class="text-5xl mt-10 text-center lg:text-left">Upcoming Events ~</h2>
+                    <h2 class="text-5xl mt-10 text-center lg:text-left">Newly listed</h2>
 
-                    <div class="mt-5 opacity-25">
-                        <p class="my-5">Past events</p>
-                        <event-record day="17"
-                                  month="Aug"
-                                  title="Showroom Grand Opening 2024"
-                                  description="Join us for the grand opening of our new showroom. We will be showcasing the latest, rare, and elite selection of vehicles."
-                                  link="https://www.instagram.com/p/C9j4a77MC8Y/"
-                        >
-                        </event-record>
+                    <div class="grid grid-cols-3 gap-5 mt-5">
+                        <template v-for="car in cars"
+                                  v-key="car.id">
+                            <car-card :id="car.id"
+                                      :car="car"
+                                      :description="car.description"
+                                      :description2="car.description2"
+                                      :price="car.price_human"
+                                      :year="car.year"
+                                      :engine="car.engine_size"
+                            >
+                            </car-card>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -159,6 +171,11 @@ function handleImageError() {
                 <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                     <h2 class="text-5xl mt-10 text-center lg:text-left">Take a forward step now.</h2>
                     <p class="mt-2 text-3xl text-center lg:text-left">Enjoy a carefully handpicked collection from the Luxuria World.</p>
+                    <div class="flex justify-center lg:justify-start mt-5">
+                        <a :href="route('cars.index')" class="hover:bg-yellow-800 hover:text-white bg-yellow-600 text-black px-2 rounded text-bold text-2xl">
+                            Browse latest collection
+                        </a>
+                    </div>
                     <div class="mt-5 flex-row lg:flex gap-10 justify-center">
                         <!--<a href="#">-->
                         <!--    <div class="bg-white text-black flex justify-center items-center align-bottom my-5"-->
@@ -171,21 +188,15 @@ function handleImageError() {
                         <!--</a>-->
 
                         <div class="relative bg-black rounded-lg overflow-hidden">
-                            <a :href="route('cars.index')">
-                                 <video
-                                    src="/car_images/ghost.mp4"
-                                    autoplay
-                                    loop
-                                    muted
-                                    playsinline
-                                    class="absolute inset-0 object-cover transition duration-300 opacity-75"
-                                />
-                                <div class="w-full h-full align-items-center justify-center items-center flex text-center">
-                                    <h2 class="w-[400px] mt-10 pt-10 lg:mt-0 bg-black" style="min-height: 150px;">
-                                        Showroom
-                                    </h2>
-                                </div>
-                            </a>
+                             <video
+                                src="/car_images/ghost.mp4"
+                                autoplay
+                                loop
+                                muted
+                                playsinline
+                                height="300"
+                                class=""
+                            />
                         </div>
                         <!--<a href="#">-->
                         <!--    <div class="bg-white text-black flex justify-center items-center align-bottom my-5"-->
@@ -203,7 +214,7 @@ function handleImageError() {
 
         <contact-us></contact-us>
 
-        <footer class="p-10 lg:p-20 text-xs text-black dark:text-white/70" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'">
+        <footer class="p-10 lg:p-20 text-xs text-white/70" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'">
             <div class="flex gap-20 justify-center">
                 <div>
                     <h3 class="font-bold">Navigation</h3>
