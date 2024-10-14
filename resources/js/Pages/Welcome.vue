@@ -63,7 +63,7 @@ function handleImageError() {
                 <main class="mt-6">
                     <!-- a black bg header with an image of car -->
 
-                                        <featured-cars-slider class="mt-20" :cars="cars"></featured-cars-slider>
+                    <featured-cars-slider class="mt-20" :cars="cars"></featured-cars-slider>
 
                     <div class="relative bg-black rounded-lg overflow-hidden mt-10">
                         <div class="relative z-10 px-6 py-12 text-white">
@@ -107,18 +107,22 @@ function handleImageError() {
 
                         <div class="grid sm:grid-cols-1 lg:grid-cols-4 gap-6 mt-5 text-center">
                             <div class="text-black bg-gray-200 p-5 rounded">
+                                <img width="30px" class="m-auto block" src="/vehicle.png" alt="">
                                 <h2 class="font-bold text-2xl">Vehicle Sales</h2>
                                 <p>Offering an elite collection of luxury, sports and supercars, both modern and classic.</p>
                             </div>
                             <div class="text-black bg-gray-200 p-5 rounded">
+                                <img width="30px" class="m-auto block" src="/sourcing.png" alt="">
                                 <h2 class="font-bold text-2xl">Sourcing</h2>
                                 <p>Expert service for sourcing rare and exclusive luxury cars globally.</p>
                             </div>
                             <div class="text-black bg-gray-200 p-5 rounded">
+                                <img width="30px" class="m-auto block" src="/concierge.png" alt="">
                                 <h2 class="font-bold text-2xl">Consignment services</h2>
                                 <p>Professional service for sale or return of high-end luxury cars.</p>
                             </div>
                             <div class="text-black bg-gray-200 p-5 rounded">
+                                <img width="30px" class="m-auto block" src="/trailer.png">
                                 <h2 class="font-bold text-2xl">Collection & Return</h2>
                                 <p>Exclusive service for luxury car collection and return with precision.</p>
                             </div>
@@ -188,7 +192,7 @@ function handleImageError() {
                         <!--</a>-->
 
                         <div class="relative bg-black rounded-lg overflow-hidden">
-                             <video
+                            <video
                                 src="/car_images/ghost.mp4"
                                 autoplay
                                 loop
