@@ -29,10 +29,24 @@ export default {
         <!--     alt="" />-->
 
         <template v-if="car.media">
-            <img class="mt-2 border-2 border-black"
-                 v-if="car.media.length"
-                 :src="route('media.show', car.media[0].id)"
-                 alt="" />
+
+            <div class="bg-red w-full h-5">
+
+            </div>
+
+            <!--<div-->
+            <!--    class="w-full h-full bg-cover bg-center py-1 block"-->
+            <!--    width="100%"-->
+            <!--    height="500px"-->
+            <!--     :style="'background-image: url(' + route('media.show', car.media[0].id) + ');'"-->
+            <!--&gt;-->
+            <!--</div>-->
+
+            <!--<img class="mt-2 border-2 border-black"-->
+            <!--     v-if="car.media.length"-->
+            <!--     :src="route('media.show', car.media[0].id)"-->
+            <!--     alt="" />-->
+
             <!--<img class="mt-2 border-2 border-black"-->
             <!-- v-if="car.at_data.media.images.length"-->
             <!-- :src="car.at_data.media.images[0]['href']"-->
