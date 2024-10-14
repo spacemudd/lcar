@@ -52,4 +52,9 @@ class Car extends Model implements HasMedia
         }
         return '£'.number_format($this->price, 2);
     }
+
+    public function scopePublished($q)
+    {
+        $q->where('at_published', 'PUBLISHED');
+    }
 }
