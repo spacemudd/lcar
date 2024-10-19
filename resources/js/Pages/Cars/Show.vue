@@ -97,8 +97,8 @@ function handleImageError() {
                             <div>
                                 <car-gallery :gallery-data="car.media"></car-gallery>
                             </div>
-                            <div>
 
+                            <div>
                                 <div class="grid grid-cols-1 lg:grid-cols-3 mt-5 gap-5">
                                     <div v-for="(property, index) in {Price: car.price_human, Mileage: car.mileage, Fuel: car.fuel_type, Registration: car.registration, Owners:car.owners, 'Emission Class': car.emission_class}"
                                          class="bg-white text-black p-2 border-2 border-yellow-500 text-sm">

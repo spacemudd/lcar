@@ -66,7 +66,7 @@ function handleImageError() {
 
 
                 <main>
-                    <div class="relative bg-black rounded-lg overflow-hidden mt-10 p-2 max-w-[500px] mx-auto">
+                    <div class="relative bg-black rounded-lg overflow-hidden mt-10 p-10 max-w-[500px] mx-auto">
                         <h2 class="text-5xl text-white font-bold text-center lg:text-left">
                             Sell Your Car
                         </h2>

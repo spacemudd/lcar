@@ -22,6 +22,7 @@
 
     <swiper
         @swiper="setThumbsSwiper"
+        :navigation="true"
         :spaceBetween="10"
         :slidesPerView="4"
         :freeMode="true"
@@ -54,7 +55,7 @@ import 'swiper/css/thumbs';
 //import './style.css';
 
 // import required modules
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { FreeMode, Navigation, Pagination, Thumbs } from 'swiper/modules';
 
 export default {
     props: [
@@ -77,7 +78,7 @@ export default {
         return {
             thumbsSwiper,
             setThumbsSwiper,
-            modules: [FreeMode, Navigation, Thumbs],
+            modules: [FreeMode, Navigation, Pagination, Thumbs],
         };
     },
 

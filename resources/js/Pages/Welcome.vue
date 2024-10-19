@@ -60,6 +60,10 @@ function handleImageError() {
                     <a target="_blank" href="https://www.instagram.com/Luxuria_uk"><img src="/instagram.svg" class="w-10 border-2 border-white p-2" alt=""></a>
                     <a target="_blank" href="https://www.tiktok.com/Luxuria_uk"><img src="/tiktok.svg" class="w-10 border-2 border-white p-2" alt=""></a>
                 </div>
+                <div>
+                    <p class="text-center lg:text-right text-white text-2xl mt-3"><a href="tel:+441524488800">+44 1524 488800</a></p>
+                    <p class="text-center lg:text-right text-white text-2xl mt-3"><a href="mailto:info@luxuria-auto.co.uk">info@luxuria-auto.co.uk</a></p>
+                </div>
 
                 <main>
                     <!-- a black bg header with an image of car -->
@@ -138,9 +142,10 @@ function handleImageError() {
 
         <div>
             <div class="flex flex-col items-center justify-center px-6">
-                <h2 class="text-6xl mt-10 uppercase">
-                    Signup to our emails
+                <h2 class="text-6xl mt-10 uppercase text-white">
+                    Sign up for our newsletter
                 </h2>
+                <h3 class="text-4xl text-white mt-2">See our latest cars as they arrive</h3>
                 <!-- signup to newsletter button -->
                 <div class="mt-5">
                     <newsletter-signup></newsletter-signup>
