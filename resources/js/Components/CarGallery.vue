@@ -11,7 +11,7 @@
         class="mySwiper2"
     >
         <swiper-slide v-for="img in galleryData">
-            <img @click="toggleFullscreen" :src="route('media.show', img.id)" />
+            <img :src="route('media.show', img.id)" />
         </swiper-slide>
     </swiper>
 
@@ -25,7 +25,7 @@
         class="mySwiper"
     >
             <swiper-slide v-for="img in galleryData">
-                <img @click="toggleFullscreen" :src="route('media.show', img.id)" />
+                <img :src="route('media.show', img.id)" />
             </swiper-slide>
     </swiper>
 </template>
