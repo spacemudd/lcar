@@ -34,7 +34,7 @@ Route::put('webhooks/autotrader', [AutoTraderReceiverController::class, 'index']
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
-        'cars' => Car::with('media')->published()->latest()->limit(5)->get(),
+        'cars' => Car::with('media')->published()->latest()->limit(3)->get(),
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
