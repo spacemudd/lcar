@@ -86,7 +86,7 @@ export default {
 
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 .swiper {
     width: 100%;
     height: 100%;
