@@ -93,8 +93,8 @@ function handleImageError() {
                             </div>
 
                             <!--<p class="mt-10">* Open from Monday to Fri 9AM to 6PM</p>-->
-                            <p class="mt-10">* For more information on what we offer our clients contact us on: +44 1524 488800</p>
-                            <p>* For immediate requests, please reach us at info@luxuria-auto.co.uk</p>
+                            <p class="mt-10">* For more information on what we offer our clients contact us on: <a class="bg-black" href="tel:+441524488800">+44 1524 488800</a></p>
+                            <p>* For immediate requests, please reach us at <a class="bg-black" href="mailto:info@luxuria-auto.co.uk">info@luxuria-auto.co.uk</a></p>
                         </div>
                         <div class="absolute inset-0 bg-black bg-opacity-50" />
                         <!-- autplay  a video -->
