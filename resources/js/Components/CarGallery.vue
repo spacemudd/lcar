@@ -14,7 +14,7 @@
             <!--<img :src="route('media.show', img.id)" />-->
             <div
                     class="bg-cover bg-center py-1 block"
-                     :style="'height:300px;background-image: url(' + route('media.show', img.id) + ');'"
+                     :style="'height:100%;width:100%;background-image: url(' + route('media.show', img.id) + ');'"
                 >
                 </div>
         </swiper-slide>
@@ -30,12 +30,12 @@
         class="mySwiper"
     >
             <swiper-slide v-for="img in galleryData">
-                <!--<img :src="route('media.show', img.id)" />-->
-                <div
-                    class="bg-cover bg-center py-1 block"
-                     :style="'height:300px;background-image: url(' + route('media.show', img.id) + ');'"
-                >
-                </div>
+                <img :src="route('media.show', img.id)" />
+                <!--<div-->
+                <!--    class="bg-cover bg-center py-1 block"-->
+                <!--     :style="'height:300px;background-image: url(' + route('media.show', img.id) + ');'"-->
+                <!--&gt;-->
+                <!--</div>-->
             </swiper-slide>
     </swiper>
 </template>
