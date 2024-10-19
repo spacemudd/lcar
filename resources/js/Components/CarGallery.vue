@@ -23,7 +23,7 @@
     <swiper
         @swiper="setThumbsSwiper"
         :spaceBetween="10"
-        :slidesPerView="4"
+        :slidesPerView="30"
         :freeMode="true"
         :watchSlidesProgress="true"
         :modules="modules"
