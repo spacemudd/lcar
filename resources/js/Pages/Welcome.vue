@@ -6,6 +6,7 @@ import ContactUs from "@/Components/ContactUs.vue";
 import Navbar from "@/Components/Navbar.vue";
 import CarCard from "@/Components/CarCard.vue";
 import FeaturedCarsSlider from "@/Components/FeaturedCarsSlider.vue";
+import FeaturedCarsCarousel from "@/Components/FeaturedCarsCarousel.vue";
 
 defineProps({
     canLogin: {
@@ -54,16 +55,18 @@ function handleImageError() {
                 </header>
 
                 <div class="flex gap-10 justify-center lg:justify-end">
-                    <a target="_blank" href="https://x.com/luxuria_auto1"><img src="/x.svg" class="w-10" alt=""></a>
+                    <a target="_blank" href="https://x.com/luxuria_auto1"><img src="/x.svg" class="w-10 border-2 border-white p-2" alt=""></a>
                     <a target="_blank" href="https://www.facebook.com/profile.php?id=61559406996757"><img src="/fb.svg" class="w-10" alt=""></a>
-                    <a target="_blank" href="https://www.instagram.com/Luxuria_uk"><img src="/instagram.svg" class="w-10" alt=""></a>
-                    <a target="_blank" href="https://www.tiktok.com/Luxuria_uk"><img src="/tiktok.svg" class="w-8" alt=""></a>
+                    <a target="_blank" href="https://www.instagram.com/Luxuria_uk"><img src="/instagram.svg" class="w-10 border-2 border-white p-2" alt=""></a>
+                    <a target="_blank" href="https://www.tiktok.com/Luxuria_uk"><img src="/tiktok.svg" class="w-10 border-2 border-white p-2" alt=""></a>
                 </div>
 
-                <main class="mt-6">
+                <main>
                     <!-- a black bg header with an image of car -->
 
-                    <featured-cars-slider class="mt-20" :cars="cars"></featured-cars-slider>
+                    <featured-cars-carousel class="mt-5" :cars="cars"></featured-cars-carousel>
+
+                    <!--<featured-cars-slider class="mt-20" :cars="cars"></featured-cars-slider>-->
 
                     <div class="relative bg-black rounded-lg overflow-hidden mt-10">
                         <div class="relative z-10 px-6 py-12 text-white">
@@ -151,7 +154,7 @@ function handleImageError() {
                 <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                     <h2 class="text-5xl mt-10 text-center lg:text-left">Newly listed</h2>
 
-                    <div class="grid grid-cols-3 gap-5 mt-5">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
                         <template v-for="car in cars"
                                   v-key="car.id">
                             <car-card :id="car.id"

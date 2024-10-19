@@ -17,6 +17,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
     <meta name="google-site-verification" content="TNQ5Dpizz9V5aHn9dbYLD5B0PMXvcIGgLITc1wWhQeM" />
 
     <!-- Google Tag Manager -->

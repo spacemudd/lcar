@@ -30,17 +30,15 @@ export default {
 
         <template v-if="car.media">
 
-            <div class="bg-red w-full h-5">
+            <!--<div class="bg-red w-full h-5">-->
 
-            </div>
-
-            <!--<div-->
-            <!--    class="w-full h-full bg-cover bg-center py-1 block"-->
-            <!--    width="100%"-->
-            <!--    height="500px"-->
-            <!--     :style="'background-image: url(' + route('media.show', car.media[0].id) + ');'"-->
-            <!--&gt;-->
             <!--</div>-->
+
+            <div
+                class="bg-cover bg-center py-1 block"
+                 :style="'height:300px;background-image: url(' + route('media.show', car.media[0].id) + ');'"
+            >
+            </div>
 
             <!--<img class="mt-2 border-2 border-black"-->
             <!--     v-if="car.media.length"-->

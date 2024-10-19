@@ -50,11 +50,11 @@ function handleImageError() {
 
 
                 <main>
-                    <div class="relative bg-black rounded-lg overflow-hidden mt-10 p-2">
+                    <div class="relative bg-black rounded-lg overflow-hidden mt-10 p-10">
                         <h2 class="text-5xl text-white font-bold text-center lg:text-left">
                             Curated Selection
                         </h2>
-                        <p class="mt-5 text-2xl">
+                        <p class="mt-5 text-gray-400 text-2xl">
                             Discover our curated selection of luxury cars, featuring the finest brands, impeccable craftsmanship, and unparalleled performance for discerning drivers.
                         </p>
                     </div>
