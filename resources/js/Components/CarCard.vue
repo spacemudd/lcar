@@ -18,8 +18,8 @@ export default {
             <template v-if="car.at_data.data">
                 <p>{{ year }}</p>
                 <a :href="route('cars.show', car.id)">
-                    <h2 class="text-3xl text-black"><b>{{ car.at_data.data.vehicle.make }} {{ car.at_data.data.vehicle.model }}</b></h2>
-                    <p class="text-3xl text-black">{{ car.at_data.data.adverts.retailAdverts.attentionGrabber }}</p>
+                    <h2 class="text-2xl text-black"><b>{{ car.at_data.data.vehicle.make }} {{ car.at_data.data.vehicle.model }}</b></h2>
+                    <p class="text-2xl text-black">{{ car.at_data.data.adverts.retailAdverts.attentionGrabber }}</p>
                 </a>
             </template>
         </template>
