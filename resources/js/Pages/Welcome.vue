@@ -145,7 +145,7 @@ function handleImageError() {
                 <h2 class="text-6xl mt-10 uppercase text-white text-center">
                     Sign up for our newsletter
                 </h2>
-                <h3 class="text-4xl text-white mt-2">See our latest cars as they arrive</h3>
+                <h3 class="text-4xl text-white mt-2 text-center">See our latest cars as they arrive</h3>
                 <!-- signup to newsletter button -->
                 <div class="mt-5">
                     <newsletter-signup></newsletter-signup>
