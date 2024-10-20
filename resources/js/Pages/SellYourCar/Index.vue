@@ -29,6 +29,7 @@ const form = useForm({
     model: '',
     year: '',
     message: '',
+    mileage: '',
 });
 
 const submitForm = () => {
@@ -111,6 +112,11 @@ function handleImageError() {
                                         <div>
                                             <label for="phone" class="block text-sm font-medium text-white">Year</label>
                                             <input type="text" v-model="form.year" name="phone" id="phone" class="mt-1 block w-full rounded-md bg-white text-black" required>
+                                        </div>
+
+                                        <div>
+                                            <label for="phone" class="block text-sm font-medium text-white">Mileage</label>
+                                            <input type="text" v-model="form.mileage" name="phone" id="phone" class="mt-1 block w-full rounded-md bg-white text-black" required>
                                         </div>
                                     </div>
 
