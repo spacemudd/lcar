@@ -105,6 +105,14 @@ function handleImageError() {
                             <form method="post" @submit.prevent="submitForm">
                                 <div class="grid grid-cols-1 gap-5">
                                     <div>
+                                        <label for="name" class="block text-sm font-medium text-white">Car you are interested in</label>
+                                        <input type="text" v-model="form.car_id" name="name" id="name" class="mt-1 block w-full rounded-md bg-white text-black" required>
+                                        <select>
+                                            <option :value="car.id">{{ car.make }} - {{ car.model }}</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
                                         <label for="name" class="block text-sm font-medium text-white">Name</label>
                                         <input type="text" v-model="form.name" name="name" id="name" class="mt-1 block w-full rounded-md bg-white text-black" required>
                                     </div>
