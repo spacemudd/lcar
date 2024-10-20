@@ -143,7 +143,6 @@ export default {
                 </ul>
             </div>
             <div>
-                <h3 class="font-bold">Headquarter</h3>
                 <img src="/luxuria_logo_text_white.png" class="my-2" style="max-width:100px" alt="">
                 <p>Unit 5a Keer Park, Carnforth, Lancashire</p>
                 <p>+44 1524 488800</p>
