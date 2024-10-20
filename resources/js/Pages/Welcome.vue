@@ -142,7 +142,7 @@ function handleImageError() {
 
         <div>
             <div class="flex flex-col items-center justify-center px-6">
-                <h2 class="text-6xl mt-10 uppercase text-white">
+                <h2 class="text-6xl mt-10 uppercase text-white text-center">
                     Sign up for our newsletter
                 </h2>
                 <h3 class="text-4xl text-white mt-2">See our latest cars as they arrive</h3>
