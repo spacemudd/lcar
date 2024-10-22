@@ -10,7 +10,7 @@ class CarsController extends Controller
 {
     public function index()
     {
-        $cars = Car::with('media')->where('at_published', 'PUBLISHED')->get();
+        $cars = Car::with('media')->where('at_published', 'PUBLISHED')->latest()->get();
         return Inertia::render('Cars/Index', [
             'cars' => $cars,
         ]);

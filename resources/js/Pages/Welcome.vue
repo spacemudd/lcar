@@ -68,8 +68,6 @@ function handleImageError() {
                 <main>
                     <!-- a black bg header with an image of car -->
 
-                    <featured-cars-carousel class="mt-5" :cars="cars"></featured-cars-carousel>
-
                     <!--<featured-cars-slider class="mt-20" :cars="cars"></featured-cars-slider>-->
 
                     <div class="relative bg-black rounded-lg overflow-hidden mt-10">
@@ -108,6 +106,8 @@ function handleImageError() {
                             class="absolute inset-0 object-cover w-full h-full transition duration-300 opacity-50"
                         />
                     </div>
+
+                    <featured-cars-carousel class="mt-5" :cars="cars"></featured-cars-carousel>
 
                     <div class="mt-20">
                         <h2 class="text-5xl text-white font-bold text-center lg:text-left">Bespoke Services</h2>

@@ -8,7 +8,7 @@
     <title inertia>Prestige & Luxury Cars For Sale, UK’s No1 Luxury Dealer | Luxuria Auto</title>
     <!-- Fonts -->
     <description>Luxuria Auto: Dealers in Prestige & Luxury Cars. Based In Lancashire, North West. We Go The Extra Mile. We Offer Comprehensive Help With Luxury Car Insurance, Tracking & The Best Car Warranties Available.</description>
-    
+
     {{--        <link rel="preconnect" href="https://fonts.bunny.net">--}}
     {{--        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />--}}
 
