@@ -26,13 +26,15 @@
 
     <meta name="description" content="Luxuria Auto: Dealers in Prestige & Luxury Cars. Based In Lancashire, North West. We Go The Extra Mile. We Offer Comprehensive Help With Luxury Car Insurance, Tracking & The Best Car Warranties Available.">
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-M669WF3M');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0FLL775VT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-Y0FLL775VT');
+    </script>
 
     <!-- Scripts -->
     @routes
