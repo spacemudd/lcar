@@ -7,8 +7,7 @@
 {{--    <title inertia>{{ config('app.name', 'Laravel') }}</title>--}}
     <title>Prestige & Luxury Cars For Sale, UK’s No1 Luxury Dealer | Luxuria Auto</title>
     <title inertia>Prestige & Luxury Cars For Sale, UK’s No1 Luxury Dealer | Luxuria Auto</title>
-    <!-- Fonts -->
-    <description>Luxuria Auto: Dealers in Prestige & Luxury Cars. Based In Lancashire, North West. We Go The Extra Mile. We Offer Comprehensive Help With Luxury Car Insurance, Tracking & The Best Car Warranties Available.</description>
+    <meta name="description" content="Luxuria Auto: Dealers in Prestige & Luxury Cars. Based In Lancashire, North West. We Go The Extra Mile. We Offer Comprehensive Help With Luxury Car Insurance, Tracking & The Best Car Warranties Available.">
 
     {{--        <link rel="preconnect" href="https://fonts.bunny.net">--}}
     {{--        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />--}}
@@ -57,6 +56,7 @@
         src="https://www.facebook.com/tr?id=1052046476242556&ev=PageView&noscript=1"
         /></noscript>
         <!-- End Meta Pixel Code -->
+
     </head>
 <body class="font-sans antialiased bg-black">
 <!-- Google Tag Manager (noscript) -->
