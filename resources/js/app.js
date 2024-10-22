@@ -7,6 +7,7 @@ import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import VueSidePanel from 'vue3-side-panel';
+import VueGtag from "vue-gtag";
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -18,6 +19,7 @@ createInertiaApp({
             .use(plugin)
             .use(VueSidePanel)
             .use(ZiggyVue)
+            .use(VueGtag, {id: "G-Y0FLL775VT"})
             .mount(el);
     },
     progress: {
