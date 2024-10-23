@@ -42,7 +42,10 @@ function handleImageError() {
 </script>
 
 <template>
-    <Head title="Cars " />
+    <Head title="Cars | Luxuria Auto">
+        <meta name="description" content="The Latest Available Cars on Luxuria Autos UK">
+    </Head>
+
     <div class="bg-black text-white/50">
         <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="/bg-2.svg" />
         <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">

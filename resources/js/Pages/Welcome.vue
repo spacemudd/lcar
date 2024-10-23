@@ -76,7 +76,9 @@ function handleImageError() {
 </style>
 
 <template>
-    <Head title="Welcome" />
+    <Head title="Prestige & Luxury Cars For Sale, UK’s No1 Luxury Dealer | Luxuria Auto">
+        <meta name="description" content="Luxuria Auto: Dealers in Prestige & Luxury Cars. Based In Lancashire, North West. We Go The Extra Mile. We Offer Comprehensive Help With Luxury Car Insurance, Tracking & The Best Car Warranties Available.">
+    </Head>
     <div class="bg-black text-white/50">
         <!--<img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" />-->
         <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="/bg-2.svg" />
