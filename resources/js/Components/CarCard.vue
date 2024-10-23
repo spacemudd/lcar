@@ -56,7 +56,7 @@ export default {
             <a class="border px-2 hover:bg-black hover:text-white border-black font-bold transition duration-300" :href="route('cars.show', car.id)">
                 More Information
             </a>
-            <a class="border px-2 hover:bg-black hover:text-white border-black font-bold transition duration-300" :href="route('appointments.create')">
+            <a class="border px-2 hover:bg-black hover:text-white border-black font-bold transition duration-300" :href="route('appointments.create', {car_id: car.id})">
                 Book an appointment
             </a>
         </div>

@@ -37,6 +37,44 @@ function handleImageError() {
 }
 </script>
 
+<style lang="css">
+
+.boujee-text {
+  --bg-size: 400%;
+  /*    --color-one: hsl(15 90% 55%);*/
+  /*--color-two: hsl(40 95% 55%);*/
+  --color-one: hsl(44, 26%, 100%);
+  --color-two: hsl(44, 100%, 50%);
+  font-size: clamp(1rem, 15vmin, 6rem);
+  background: linear-gradient(
+                90deg,
+                var(--color-one),
+                var(--color-two),
+                var(--color-one)
+              ) 0 0 / var(--bg-size) 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .boujee-text {
+    animation: move-bg 60s linear infinite;
+  }
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+}
+
+.text-yellow-custom {
+    background-color: hsl(44, 100%, 50%);
+}
+
+</style>
+
 <template>
     <Head title="Welcome" />
     <div class="bg-black text-white/50">
@@ -54,25 +92,14 @@ function handleImageError() {
                     <navbar></navbar>
                 </header>
 
-                <div class="flex gap-10 justify-center lg:justify-end">
-                    <a target="_blank" href="https://x.com/luxuria_auto1"><img src="/x.svg" class="w-10 border-2 border-white p-2" alt=""></a>
-                    <a target="_blank" href="https://www.facebook.com/profile.php?id=61559406996757"><img src="/fb.svg" class="w-10" alt=""></a>
-                    <a target="_blank" href="https://www.instagram.com/Luxuria_uk"><img src="/instagram.svg" class="w-10 border-2 border-white p-2" alt=""></a>
-                    <a target="_blank" href="https://www.tiktok.com/Luxuria_uk"><img src="/tiktok.svg" class="w-10 border-2 border-white p-2" alt=""></a>
-                </div>
-                <div>
-                    <p class="text-center lg:text-right text-white text-2xl mt-3"><a href="tel:+441524488800">+44 1524 488800</a></p>
-                    <p class="text-center lg:text-right text-white text-2xl mt-3"><a href="mailto:info@luxuria-auto.co.uk">info@luxuria-auto.co.uk</a></p>
-                </div>
-
                 <main>
                     <!-- a black bg header with an image of car -->
 
                     <!--<featured-cars-slider class="mt-20" :cars="cars"></featured-cars-slider>-->
 
-                    <div class="relative bg-black rounded-lg overflow-hidden mt-10">
+                    <div class="relative bg-black rounded-lg overflow-hidden">
                         <div class="relative z-10 px-6 py-12 text-white">
-                            <h1 class="text-7xl font-bold opacity-100">Your gateway to luxury.</h1>
+                            <h1 class="font-bold opacity-100 boujee-text">Your gateway to luxury.</h1>
                             <p class="ml-2 mt-10">
                                 Offering an exclusive selection of the finest brands, including Porsche, Mercedes, Lamborghini, Bentley, Ferrari, and
                                 Rolls-Royce, each representing the pinnacle of elegance and performance.
@@ -84,7 +111,7 @@ function handleImageError() {
                                 <!--    </a>-->
                                 <!--</div>-->
                                 <div>
-                                    <a :href="route('cars.index')" class="hover:bg-yellow-800 hover:text-white bg-yellow-600 text-black px-2 rounded text-bold text-2xl">
+                                    <a :href="route('cars.index')" class="hover:bg-yellow-800 hover:text-white text-yellow-custom text-black px-2 rounded text-bold text-2xl">
                                         Browse latest collection
                                     </a>
                                 </div>
@@ -241,11 +268,16 @@ function handleImageError() {
                     </ul>
                 </div>
                 <div>
-                    <h3 class="font-bold">Headquarter</h3>
-                    <img src="/luxuria_logo_text_white.png" class="my-2" style="max-width:100px" alt="">
+                    <img src="/luxuria_logo_text_white.png" class="my-2" style="max-width:250px;margin-left:-10px;" alt="">
                     <p>Unit 5a Keer Park, Carnforth, Lancashire</p>
-                    <p>+44 1524 488800</p>
-                    <p>info@luxuria-auto.co.uk</p>
+                    <p><a href="tel:+441524488800">+44 1524 488800</a></p>
+                    <p><a href="mailto:info@luxuria-auto.co.uk">info@luxuria-auto.co.uk</a></p>
+                    <div class="flex gap-10 justify-center lg:justify-end mt-5">
+                        <a target="_blank" href="https://x.com/luxuria_auto1"><img src="/x.svg" class="w-10 md:border-2 md:border-white md:p-2" alt=""></a>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=61559406996757"><img src="/fb.svg" class="w-10" alt=""></a>
+                        <a target="_blank" href="https://www.instagram.com/Luxuria_uk"><img src="/instagram.svg" class="w-10 md:border-2 md:border-white md:p-2" alt=""></a>
+                        <a target="_blank" href="https://www.tiktok.com/Luxuria_uk"><img src="/tiktok.svg" class="w-10 md:border-2 md:border-white md:p-2" alt=""></a>
+                    </div>
                 </div>
             </div>
             <p class="mt-10 text-center">Copyright © Luxuria 2024.</p>

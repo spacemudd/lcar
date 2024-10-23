@@ -2,14 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class AppointmentsController extends Controller
 {
-    public function create()
+    public function create(Request $request)
     {
-        return Inertia::render('Appointments/Create');
+        if ($request->has('car_id')) {
+            $car = Car::published()->findOrFail($request->car_id);
+        }
+
+        return Inertia::render('Appointments/Create', [
+            'car' => $car ?? null,
+            'cars' => Car::latest()->published()->get(),
+        ]);
     }
 
     public function store()

@@ -19,6 +19,14 @@ defineProps({
         type: String,
         required: true,
     },
+    car: {
+        type: Array,
+        required: false,
+    },
+    cars: {
+        type: Array,
+        required: false,
+    }
 });
 
 const form = useForm({
@@ -104,11 +112,17 @@ function handleImageError() {
                         <div class="mt-10">
                             <form method="post" @submit.prevent="submitForm">
                                 <div class="grid grid-cols-1 gap-5">
-                                    <div>
-                                        <label for="name" class="block text-sm font-medium text-white">Car you are interested in</label>
-                                        <input type="text" v-model="form.car_id" name="name" id="name" class="mt-1 block w-full rounded-md bg-white text-black" required>
-                                        <select>
-                                            <option :value="car.id">{{ car.make }} - {{ car.model }}</option>
+                                    <div v-if="car">
+                                        <label for="name" class="block text-sm font-medium text-white">Car you are interested in?</label>
+                                        <select disabled class="text-black w-full rounded-lg mt-2">
+                                            <option selected :value="car.id">{{ car.year }} - {{ car.at_make }} - {{ car.at_model }}</option>
+                                        </select>
+                                    </div>
+                                    <div v-else>
+                                        <label for="name" class="block text-sm font-medium text-white">Car you are interested in?</label>
+                                        <select class="text-black w-full rounded-lg mt-2" autofocus>
+                                            <option value=""></option>
+                                            <option v-for="car in cars" :value="car.id">{{ car.year }} - {{ car.at_make }} - {{ car.at_model }}</option>
                                         </select>
                                     </div>
 
