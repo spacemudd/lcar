@@ -16,7 +16,7 @@ export default {
     <div class="border border-yellow-600 p-5 rounded bg-white text-black">
         <template v-if="car.at_data">
             <template v-if="car.at_data.data">
-                <p>{{ year }}</p>
+                <p class="text-2xl text-black">{{ year }}</p>
                 <a :href="route('cars.show', car.id)">
                     <h2 class="text-2xl text-black"><b>{{ car.at_data.data.vehicle.make }} {{ car.at_data.data.vehicle.model }}</b></h2>
                     <p class="text-2xl text-black">{{ car.at_data.data.adverts.retailAdverts.attentionGrabber }}</p>
@@ -26,7 +26,7 @@ export default {
 
         <template v-if="car.media">
             <div
-                class="bg-cover bg-center py-1 block"
+                class="bg-cover bg-center py-1 block mt-5"
                  :style="'height:300px;background-image: url(' + route('media.show', car.media[0].id) + ');'"
             >
             </div>
@@ -52,7 +52,7 @@ export default {
             </tr>
             </tbody>
         </table>
-        <div class="mt-2 flex justify-between">
+        <div class="mt-2 flex gap-2 text-center lg:text-left justify-between">
             <a class="border px-2 hover:bg-black hover:text-white border-black font-bold transition duration-300" :href="route('cars.show', car.id)">
                 More Information
             </a>
