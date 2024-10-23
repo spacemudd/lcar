@@ -143,22 +143,17 @@ export default {
                 </ul>
             </div>
             <div>
-                                <div class="flex gap-10 justify-center lg:justify-end">
-                    <a target="_blank" href="https://x.com/luxuria_auto1"><img src="/x.svg" class="w-10 border-2 border-white p-2" alt=""></a>
-                    <a target="_blank" href="https://www.facebook.com/profile.php?id=61559406996757"><img src="/fb.svg" class="w-10" alt=""></a>
-                    <a target="_blank" href="https://www.instagram.com/Luxuria_uk"><img src="/instagram.svg" class="w-10 border-2 border-white p-2" alt=""></a>
-                    <a target="_blank" href="https://www.tiktok.com/Luxuria_uk"><img src="/tiktok.svg" class="w-10 border-2 border-white p-2" alt=""></a>
+                    <img src="/luxuria_logo_text_white.png" class="my-2" style="max-width:250px;margin-left:-10px;" alt="">
+                    <p>Unit 5a Keer Park, Carnforth, Lancashire</p>
+                    <p><a href="tel:+441524488800">+44 1524 488800</a></p>
+                    <p><a href="mailto:info@luxuria-auto.co.uk">info@luxuria-auto.co.uk</a></p>
+                    <div class="flex gap-10 justify-center lg:justify-end mt-5">
+                        <a target="_blank" href="https://x.com/luxuria_auto1"><img src="/x.svg" class="w-10 md:border-2 md:border-white md:p-2" alt=""></a>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=61559406996757"><img src="/fb.svg" class="w-10" alt=""></a>
+                        <a target="_blank" href="https://www.instagram.com/Luxuria_uk"><img src="/instagram.svg" class="w-10 md:border-2 md:border-white md:p-2" alt=""></a>
+                        <a target="_blank" href="https://www.tiktok.com/Luxuria_uk"><img src="/tiktok.svg" class="w-10 md:border-2 md:border-white md:p-2" alt=""></a>
+                    </div>
                 </div>
-                <div>
-                    <p class="text-center lg:text-right text-white text-2xl mt-3"><a href="tel:+441524488800">+44 1524 488800</a></p>
-                    <p class="text-center lg:text-right text-white text-2xl mt-3"><a href="mailto:info@luxuria-auto.co.uk">info@luxuria-auto.co.uk</a></p>
-                </div>
-
-                <img src="/luxuria_logo_text_white.png" class="my-2" style="max-width:100px" alt="">
-                <p>Unit 5a Keer Park, Carnforth, Lancashire</p>
-                <p>+44 1524 488800</p>
-                <p>info@luxuria-auto.co.uk</p>
-            </div>
         </div>
         <p class="mt-10 text-center">Copyright © Luxuria 2024.</p>
     </footer>
