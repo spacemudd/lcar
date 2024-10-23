@@ -14,7 +14,7 @@
             <!--<img :src="route('media.show', img.id)" />-->
             <div
                     class="bg-cover bg-center py-1 block"
-                     :style="'height:100%;width:100%;background-image: url(' + route('media.show', img.id) + ');'"
+                     :style="'min-height:300px;height:100%;width:100%;background-image: url(' + route('media.show', img.id) + ');'" 
                 >
                 </div>
         </swiper-slide>
