@@ -68,8 +68,7 @@ function handleImageError() {
                                     From the pinnacle of German engineering to the elegance of Italian design, from the
                                     timeless tradition of English craftsmanship to the bold spirit of American classics,
                                     we present an unparalleled selection for the discerning automobile connoisseur.
-                                    Experience the luxury of 24 exotic brands and an exquisite collection of 75 to 100
-                                    cars, all under one roof, crafted to captivate your senses and ignite your passion.
+                                    Experience the luxury of 24 exotic brands and an exquisite collection cars, all under one roof, crafted to captivate your senses and ignite your passion.
                                 </p>
                             </div>
                         </div>
