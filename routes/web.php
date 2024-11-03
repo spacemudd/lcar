@@ -11,6 +11,7 @@ use App\Http\Controllers\TestimonialsController;
 use App\Http\Controllers\Webhooks\AutoTraderReceiverController;
 use App\Http\Controllers\WhyUsController;
 use App\Models\Car;
+use App\Models\GlobalSetting;
 use App\Services\AutoTraderService;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -33,8 +34,11 @@ Route::get('bb', function() {
 Route::put('webhooks/autotrader', [AutoTraderReceiverController::class, 'index']);
 
 Route::get('/', function () {
+
+    //dd(seo()->render());
     return Inertia::render('Welcome', [
-        'cars' => Car::with('media')->published()->latest()->limit(3)->get(),
+        'seo_tags' => seo(),
+        'cars' => Car::with('media')->published()->latest()->limit(20)->get(),
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
