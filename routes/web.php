@@ -11,7 +11,7 @@ use App\Http\Controllers\TestimonialsController;
 use App\Http\Controllers\Webhooks\AutoTraderReceiverController;
 use App\Http\Controllers\WhyUsController;
 use App\Models\Car;
-use App\Models\GlobalSetting;
+//use App\Models\GlobalSetting;
 use App\Services\AutoTraderService;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -37,7 +37,7 @@ Route::get('/', function () {
 
     //dd(seo()->render());
     return Inertia::render('Welcome', [
-        'seo_tags' => seo(),
+        //'seo_tags' => seo(),
         'cars' => Car::with('media')->published()->latest()->limit(20)->get(),
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
