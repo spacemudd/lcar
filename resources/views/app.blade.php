@@ -14,6 +14,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
+    <title>Prestige & Luxury Cars For Sale, UK’s No1 Luxury Dealer | Luxuria Auto</title>
+    <meta name="description" content="Luxuria Auto: Dealers in Prestige & Luxury Cars. Based In Lancashire, North West. We Go The Extra Mile. We Offer Comprehensive Help With Luxury Car Insurance, Tracking & The Best Car Warranties Available.">
+
     <meta name="google-site-verification" content="TNQ5Dpizz9V5aHn9dbYLD5B0PMXvcIGgLITc1wWhQeM" />
 
     <!-- Scripts -->
