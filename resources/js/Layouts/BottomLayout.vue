@@ -155,6 +155,6 @@ export default {
                     </div>
                 </div>
         </div>
-        <p class="mt-10 text-center">Copyright © Luxuria 2024.</p>
+        <p class="mt-10 text-center">Copyright © Luxuria UK 2024.</p>
     </footer>
 </template>

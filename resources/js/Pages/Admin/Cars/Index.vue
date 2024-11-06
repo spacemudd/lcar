@@ -20,7 +20,7 @@ defineProps({
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <p v-for="car in cars"><a :href="route('admin.cars.show', car.id)">{{ car.description }}</a></p>
+                    <p v-for="car in cars"><a :href="route('admin.cars.show', car.id)">{{ car.model }}</a></p>
                 </div>
             </div>
         </div>

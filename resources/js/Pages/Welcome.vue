@@ -76,7 +76,8 @@ function handleImageError() {
 </style>
 
 <template>
-    <Head title="Prestige & Luxury Cars For Sale, UK’s No1 Luxury Dealer | Luxuria Auto">
+    <Head>
+        <title>Prestige & Luxury Cars For Sale, UK’s No1 Luxury Dealer | Luxuria Auto</title>
         <meta name="description" content="Luxuria Auto: Dealers in Prestige & Luxury Cars. Based In Lancashire, North West. We Go The Extra Mile. We Offer Comprehensive Help With Luxury Car Insurance, Tracking & The Best Car Warranties Available.">
     </Head>
     <div class="bg-black text-white/50">
@@ -264,7 +265,6 @@ function handleImageError() {
                         <li class="ml-3 mt-1"><a :href="route('cars.index')">Cars</a></li>
                         <li class="ml-3 mt-1"><a :href="route('sell-your-car.index')">Sell Your Car</a></li>
                         <li class="ml-3 mt-1"><a :href="route('about.index')">About</a></li>
-                        <li class="ml-3 mt-1"><a :href="route('testimonials.index')">Testimonials</a></li>
                         <li class="ml-3 mt-1"><a :href="route('financing.index')">Financing</a></li>
                         <li class="ml-3 mt-1"><a :href="route('appointments.create')">Appointment</a></li>
                     </ul>

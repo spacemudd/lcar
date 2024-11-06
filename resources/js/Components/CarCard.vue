@@ -16,10 +16,10 @@ export default {
     <div class="border border-yellow-600 p-5 rounded bg-white text-black">
         <template v-if="car.at_data">
             <template v-if="car.at_data.data">
-                <p class="text-2xl text-black">{{ year }}</p>
+                <p class="text-xl text-black">{{ year }}</p>
                 <a :href="route('cars.show', car.id)">
-                    <h2 class="text-2xl text-black"><b>{{ car.at_data.data.vehicle.make }} {{ car.at_data.data.vehicle.model }}</b></h2>
-                    <p class="text-2xl text-black">{{ car.at_data.data.adverts.retailAdverts.attentionGrabber }}</p>
+                    <h2 class="text-xl text-black"><b>{{ car.at_data.data.vehicle.make }} {{ car.at_data.data.vehicle.model }}</b></h2>
+                    <p class="text-xl text-black">{{ car.at_data.data.adverts.retailAdverts.attentionGrabber }}</p>
                 </a>
             </template>
         </template>

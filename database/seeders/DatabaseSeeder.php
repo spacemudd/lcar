@@ -15,11 +15,12 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        //User::factory()->create([
-        //    'name' => 'Test User',
-        //    'email' => 'test@example.com',
-        //]);
+        User::factory()->create([
+            'name' => 'Admin user',
+            'email' => 'admin@luxuria-auto.co.uk',
+            'password' => bcrypt('luxuria@123'),
+        ]);
 
-        $this->call(CarsSeeder::class);
+        // $this->call(CarsSeeder::class);
     }
 }
