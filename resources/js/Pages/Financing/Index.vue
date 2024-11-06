@@ -29,7 +29,11 @@ function handleImageError() {
 </script>
 
 <template>
-    <Head title="Financing" />
+    <Head>
+        <title>Financing Your car purchase has never been easier, Let us help. | Luxuria Auto</title>
+        <meta name="description" content="Luxuria Auto offer financing for all our cars. We have a range of options available to suit your needs. We can offer finance for all credit types, so don't hesitate to get in touch.">
+    </Head>
+
     <div class="bg-black text-white/50">
         <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="/bg-2.svg" />
         <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">

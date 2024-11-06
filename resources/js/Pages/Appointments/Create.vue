@@ -55,7 +55,11 @@ function handleImageError() {
 </script>
 
 <template>
-    <Head title="Appointment" />
+    <Head>
+        <title>Want to look at our superior cars? Book an appointment and get one to one personal service. | Luxuria Auto</title>
+        <meta name="description" content="Luxuria Auto, Dealers in Prestige &amp; Luxury Cars. Based In Lancashire, North West. We Go The Extra Mile. We Offer Comprehensive Help With Luxury Car Insurance, Tracking  & The Best Car Warranties Available.">
+    </Head>
+
     <div class="bg-black text-white/50">
         <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="/bg-2.svg" />
         <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">

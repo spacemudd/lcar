@@ -50,7 +50,10 @@ function handleImageError() {
 </script>
 
 <template>
-    <Head title="Welcome" />
+    <Head>
+        <title>Looking to sell your supercar or luxury car? Let us help. | Luxuria Auto</title>
+        <meta name="description" content="Luxuria Auto are looking to buy low mileage, quality cars for our select client base. Best prices paid with no stress or hassle.">
+    </Head>
     <div class="bg-black text-white/50">
         <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="/bg-2.svg" />
         <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">

@@ -2506,7 +2506,22 @@ const _sfc_main$z = {
     });
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<!--[-->`);
-      _push(ssrRenderComponent(unref(Head), { title: "Appointment" }, null, _parent));
+      _push(ssrRenderComponent(unref(Head), null, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<title${_scopeId}>Want to look at our superior cars? Book an appointment and get one to one personal service. | Luxuria Auto</title><meta name="description" content="Luxuria Auto, Dealers in Prestige &amp; Luxury Cars. Based In Lancashire, North West. We Go The Extra Mile. We Offer Comprehensive Help With Luxury Car Insurance, Tracking  &amp; The Best Car Warranties Available."${_scopeId}>`);
+          } else {
+            return [
+              createVNode("title", null, "Want to look at our superior cars? Book an appointment and get one to one personal service. | Luxuria Auto"),
+              createVNode("meta", {
+                name: "description",
+                content: "Luxuria Auto, Dealers in Prestige & Luxury Cars. Based In Lancashire, North West. We Go The Extra Mile. We Offer Comprehensive Help With Luxury Car Insurance, Tracking  & The Best Car Warranties Available."
+              })
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
       _push(`<div class="bg-black text-white/50"><img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="/bg-2.svg"><div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white"><div class="relative w-full max-w-2xl px-6 lg:max-w-7xl"><header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3"><div class="flex lg:justify-left lg:col-span-1"><a href="/"><img id="background" class="max-w-[100px] lg:max-w-[200px]" src="/luxuria_logo_text_white.png"></a></div>`);
       _push(ssrRenderComponent(Navbar, null, null, _parent));
       if (__props.canLogin) {
@@ -4716,7 +4731,22 @@ const _sfc_main$i = {
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<!--[-->`);
-      _push(ssrRenderComponent(unref(Head), { title: "Financing" }, null, _parent));
+      _push(ssrRenderComponent(unref(Head), null, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<title${_scopeId}>Financing Your car purchase has never been easier, Let us help. | Luxuria Auto</title><meta name="description" content="Luxuria Auto offer financing for all our cars. We have a range of options available to suit your needs. We can offer finance for all credit types, so don&#39;t hesitate to get in touch."${_scopeId}>`);
+          } else {
+            return [
+              createVNode("title", null, "Financing Your car purchase has never been easier, Let us help. | Luxuria Auto"),
+              createVNode("meta", {
+                name: "description",
+                content: "Luxuria Auto offer financing for all our cars. We have a range of options available to suit your needs. We can offer finance for all credit types, so don't hesitate to get in touch."
+              })
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
       _push(`<div class="bg-black text-white/50"><img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="/bg-2.svg"><div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white"><div class="relative w-full max-w-2xl px-6 lg:max-w-7xl"><header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3"><div class="flex lg:justify-left lg:col-span-1"><a href="/"><img id="background" class="max-w-[100px] lg:max-w-[200px]" src="/luxuria_logo_text_white.png"></a></div>`);
       _push(ssrRenderComponent(Navbar, null, null, _parent));
       _push(`</header></div><div class="relative w-full bg-white"><div class="flex flex-col items-center justify-center text-white py-10" style="${ssrRenderStyle({ "background-image": "url('/car_images/corvette.jpg')", "background-size": "cover", "background-position": "center" })}"><div class="relative w-full max-w-2xl px-6 lg:max-w-7xl"><h2 class="text-5xl my-10 text-center lg:text-left">Financing</h2><p class="mt-2 text-3xl text-center lg:text-left">All you need to know about financing with us.</p></div></div></div><div class="relative w-full bg-white py-10"><div class="flex flex-col items-center justify-center text-black"><div class="relative w-full max-w-2xl px-6 lg:max-w-7xl"><h2 class="font-bold">Financing cars</h2><p class="mt-2">We offer financing for all our cars. We have a range of options available to suit your needs. We can offer finance for all credit types, so don&#39;t hesitate to get in touch.</p><hr><h2 class="mt-5 font-bold">Am I eligible for financing?</h2><p> To be eligible for financing, you must be over 18 years old and have a valid UK driving license. You must also be able to provide proof of income and address. If you meet these requirements, you are eligible for financing with us. </p><h2 class="mt-5 font-bold"> How do I apply for financing? </h2><p> To apply for financing, simply fill out our online application form. We will review your application and get back to you as soon as possible. </p><h2 class="mt-5 font-bold"> What are the interest rates? </h2><p> Our interest rates vary depending on the amount and the length of the term. We offer competitive rates to suit your needs. </p><p class="mt-10 mb-2 font-bold">For more in-depth inquiry:</p><div class="grid grid-cols-1 lg:grid-cols-2 gap-5"><div class="border border-2 p-2 text-center"><h2 class="font-bold">Phone</h2><p>Call us on +44 1524 488800</p><p>Happy to assist.</p></div><div class="border border-2 p-2 text-center"><h2 class="font-bold">Email</h2><p>info@luxuria-auto.co.uk</p><p>For detailed and complete answers.</p></div></div><hr class="mt-10"></div></div></div>`);
@@ -6882,7 +6912,22 @@ const _sfc_main$9 = {
     });
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<!--[-->`);
-      _push(ssrRenderComponent(unref(Head), { title: "Welcome" }, null, _parent));
+      _push(ssrRenderComponent(unref(Head), null, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<title${_scopeId}>Looking to sell your supercar or luxury car? Let us help. | Luxuria Auto</title><meta name="description" content="Luxuria Auto are looking to buy low mileage, quality cars for our select client base. Best prices paid with no stress or hassle."${_scopeId}>`);
+          } else {
+            return [
+              createVNode("title", null, "Looking to sell your supercar or luxury car? Let us help. | Luxuria Auto"),
+              createVNode("meta", {
+                name: "description",
+                content: "Luxuria Auto are looking to buy low mileage, quality cars for our select client base. Best prices paid with no stress or hassle."
+              })
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
       _push(`<div class="bg-black text-white/50"><img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="/bg-2.svg"><div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white"><div class="relative w-full max-w-2xl px-6 lg:max-w-7xl"><header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3"><div class="flex lg:justify-left lg:col-span-1"><a href="/"><img id="background" class="max-w-[100px] lg:max-w-[200px]" src="/luxuria_logo_text_white.png"></a></div>`);
       _push(ssrRenderComponent(Navbar, null, null, _parent));
       _push(`</header><main><div class="relative bg-black rounded-lg overflow-hidden mt-10 p-10 max-w-[500px] mx-auto"><h2 class="text-5xl text-white font-bold text-center lg:text-left"> Sell Your Car </h2><p class="mt-5 text-2xl"> At Luxuria we are prolific buyers of the world’s finest supercars, performance cars and luxury SUVs. </p><p class="mt-5"> We specialise in exceptionally high specification, low mileage examples as well as the latest and rarest models so if you are looking to sell your supercar or luxury car then please fill out the form below and one of our buyers will be in touch. </p><div class="mt-10"><form method="post"><div class="grid grid-cols-1 gap-5"><div><label for="name" class="block text-sm font-medium text-white">Name</label><input type="text"${ssrRenderAttr("value", unref(form).name)} name="name" id="name" class="mt-1 block w-full rounded-md bg-white text-black" required></div><div><label for="email" class="block text-sm font-medium text-white">Email</label><input type="email"${ssrRenderAttr("value", unref(form).email)} name="email" id="email" class="mt-1 block w-full rounded-md bg-white text-black" required></div><div><label for="phone" class="block text-sm font-medium text-white">Phone</label><input type="text"${ssrRenderAttr("value", unref(form).phone)} name="phone" id="phone" class="mt-1 block w-full rounded-md bg-white text-black" required></div><div class="flex justify-between gap-5"><div><label for="phone" class="block text-sm font-medium text-white">Make</label><input type="text"${ssrRenderAttr("value", unref(form).make)} name="phone" id="phone" class="mt-1 block w-full rounded-md bg-white text-black" required></div><div><label for="phone" class="block text-sm font-medium text-white">Model</label><input type="text"${ssrRenderAttr("value", unref(form).model)} name="phone" id="phone" class="mt-1 block w-full rounded-md bg-white text-black" required></div><div><label for="phone" class="block text-sm font-medium text-white">Year</label><input type="text"${ssrRenderAttr("value", unref(form).year)} name="phone" id="phone" class="mt-1 block w-full rounded-md bg-white text-black" required></div><div><label for="phone" class="block text-sm font-medium text-white">Mileage</label><input type="text"${ssrRenderAttr("value", unref(form).mileage)} name="phone" id="phone" class="mt-1 block w-full rounded-md bg-white text-black" required></div></div><div><button class="hover:bg-yellow-800 hover:text-white bg-yellow-600 text-black px-2 rounded text-bold text-2xl"> Send message </button></div></div></form></div></div></main></div></div>`);
