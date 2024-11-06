@@ -33,7 +33,10 @@ function handleImageError() {
 </script>
 
 <template>
-    <Head title="Welcome" />
+    <Head>
+        <title>See our Luxury Cars. Audi, BMW, Lamborghini & Roll Royce to name just a few | Luxuria Auto</title>
+        <meta name="description" content="See Luxuria Auto’s collection of luxury and prestige cars. All cars are detailed to the highest standard and we offer industry beating warranties and help with insurance. ">
+    </Head>
     <div class="bg-black text-white/50">
         <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="/bg-2.svg" />
         <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
