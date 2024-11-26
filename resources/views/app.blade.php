@@ -58,5 +58,6 @@
 
 @inertia
 
+<script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XJ4sC4'></script>
 </body>
 </html>
